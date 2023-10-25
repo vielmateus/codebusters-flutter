@@ -168,7 +168,9 @@ class _GoalsChildPageState extends State<GoalsChildPage> {
                   const SizedBox(
                     height: 60,
                   ),
-                  ButtonColorBright(label: 'Nova Meta', onPressed: () {}),
+                  ButtonColorBright(label: 'Nova Meta', onPressed: () {
+                    Navigator.of(context).pushNamed('/extractValueChildPage');
+                  }),
                 ],
               ),
             ),

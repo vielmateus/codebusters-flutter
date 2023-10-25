@@ -13,6 +13,7 @@ import 'package:flutter_hackaton/app/core/ui/screens/adult/wallet/sucess_recharg
 import 'package:flutter_hackaton/app/core/ui/screens/adult/wallet/wallet_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/age_group_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/extract/extract_value_child_page.dart';
+import 'package:flutter_hackaton/app/core/ui/screens/child/home/home_page_child.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/login/login_child_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/login/profile_child_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/login/register_child_page.dart';
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/homePage': (context) => const HomePage(),
+        '/homePageChild': (context) => const HomePageChild(),
         '/ageGroupPage': (context) => const AgeGroupPage(),
         '/loginChildPage': (context) => const LoginChildPage(),
         '/loginAdultPage': (context) => const LoginAdultPage(),
@@ -54,8 +56,6 @@ class MyApp extends StatelessWidget {
         '/extractValueChildPage': (context) => const ExtractValueChildPage(),
         '/goalsChildPage': (context) => const GoalsChildPage(),
         '/piggyBankPage': (context) => const PiggyBankPage(),
-
-
       },
       debugShowCheckedModeBanner: false,
       home: AnimatedSplashScreen.withScreenFunction(
