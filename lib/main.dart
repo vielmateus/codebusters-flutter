@@ -16,6 +16,7 @@ import 'package:flutter_hackaton/app/core/ui/screens/child/extract/extract_value
 import 'package:flutter_hackaton/app/core/ui/screens/child/login/login_child_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/login/profile_child_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/login/register_child_page.dart';
+import 'package:flutter_hackaton/app/core/ui/screens/child/money/piggy_bank_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/objectives/goals_child_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/home_page.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
@@ -52,6 +53,7 @@ class MyApp extends StatelessWidget {
         '/payRewardPage': (context) => const PayRewardPage(),
         '/extractValueChildPage': (context) => const ExtractValueChildPage(),
         '/goalsChildPage': (context) => const GoalsChildPage(),
+        '/piggyBankPage': (context) => const PiggyBankPage(),
 
 
       },
