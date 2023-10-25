@@ -106,7 +106,7 @@ class _ExtractValueCartPageState extends State<ExtractValueCartPage> {
                 return ListView.builder(
                   itemCount: 1,
                   itemBuilder: (context, index) {
-                    return Row(
+                    return const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text('19/08/2023'),

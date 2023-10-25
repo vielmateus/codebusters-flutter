@@ -15,6 +15,9 @@ class BottonNavigationBarIcon extends StatelessWidget {
         if (i == 2){
           Navigator.of(context).pushNamed('/extractValueChildPage');
         }
+        if (i == 3){
+          Navigator.of(context).pushNamed('/piggyBankPage');
+        }
       },
       style: TabStyle.fixedCircle,
       initialActiveIndex: 2,

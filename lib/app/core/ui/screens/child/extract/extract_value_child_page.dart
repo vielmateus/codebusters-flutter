@@ -51,7 +51,7 @@ class _ExtractValueCartPageState extends State<ExtractValueChildPage> {
                               color: UiConfig.colorScheme.tertiary),
                         ),
                         Text(
-                          'Consulte as datas e valores das transações.',
+                          'Consulte os valores depositados pelo seu responsável.',
                           style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
@@ -106,13 +106,16 @@ class _ExtractValueCartPageState extends State<ExtractValueChildPage> {
                 return ListView.builder(
                   itemCount: 1,
                   itemBuilder: (context, index) {
-                    return Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('19/08/2023'),
-                        Text('asd'),
-                        Text('R\$15,00'),
-                      ],
+                    return const Padding(
+                      padding: EdgeInsets.only(left: 12, right: 12),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('19/08/2023'),
+                          Text('asd'),
+                          Text('R\$15,00'),
+                        ],
+                      ),
                     );
                   },
                 );
