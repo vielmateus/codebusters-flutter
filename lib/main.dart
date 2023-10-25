@@ -12,9 +12,11 @@ import 'package:flutter_hackaton/app/core/ui/screens/adult/objectives/new_activi
 import 'package:flutter_hackaton/app/core/ui/screens/adult/wallet/sucess_recharge.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/adult/wallet/wallet_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/age_group_page.dart';
+import 'package:flutter_hackaton/app/core/ui/screens/child/extract/extract_value_child_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/login/login_child_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/login/profile_child_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/login/register_child_page.dart';
+import 'package:flutter_hackaton/app/core/ui/screens/child/objectives/goals_child_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/home_page.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 
@@ -48,6 +50,9 @@ class MyApp extends StatelessWidget {
         '/editActivitiesPage': (context) => const EditActivitiesPage(),
         '/newActivitePage': (context) => const NewActivitePage(),
         '/payRewardPage': (context) => const PayRewardPage(),
+        '/extractValueChildPage': (context) => const ExtractValueChildPage(),
+        '/goalsChildPage': (context) => const GoalsChildPage(),
+
 
       },
       debugShowCheckedModeBanner: false,
