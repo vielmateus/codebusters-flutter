@@ -1,6 +1,5 @@
 import 'package:flutter_hackaton/app/core/data/money/model/extract_item_model.dart';
 import 'package:flutter_hackaton/app/core/data/money/repository/extract_item_repository_impl.dart';
-import 'package:flutter_hackaton/app/core/data/rest_client/dio/dio_rest_client.dart';
 import 'package:flutter_hackaton/app/core/data/rest_client/http/http_rest_clint.dart';
 import 'package:flutter_hackaton/app/core/data/rest_client/rest_client.dart';
 

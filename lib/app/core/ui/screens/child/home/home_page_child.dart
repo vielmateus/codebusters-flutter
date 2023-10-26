@@ -59,7 +59,7 @@ class HomePageChild extends StatelessWidget {
               CardIcon(label: 'Cofrinho',
                   dirImage: 'assets/icons/icon_pig_min.png',
                   onPressed: () {
-                    Navigator.pushNamed(context, '/safePage');
+                    Navigator.pushNamed(context, '/piggyBankPage');
                   } ),
 
               const SizedBox(

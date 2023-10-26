@@ -2,6 +2,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hackaton/app/core/helpers/environments.dart';
+import 'package:flutter_hackaton/app/core/local_storage/shared_preferences/shared_preferences.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/adult/login/login_adult_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/adult/login/profile_adult_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/adult/login/register_adult_page.dart';
@@ -15,6 +16,7 @@ import 'package:flutter_hackaton/app/core/ui/screens/adult/wallet/wallet_page.da
 import 'package:flutter_hackaton/app/core/ui/screens/age_group_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/safe/safe_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/extract/extract_value_child_page.dart';
+import 'package:flutter_hackaton/app/core/ui/screens/child/home/home_page_child.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/login/login_child_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/login/profile_child_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/login/register_child_page.dart';

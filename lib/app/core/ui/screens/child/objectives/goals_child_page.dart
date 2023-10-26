@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_icon.dart';
+import 'package:flutter_hackaton/app/core/ui/widgets/button_color_bright.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class GoalsChildPage extends StatefulWidget {
   const GoalsChildPage({super.key});
@@ -9,24 +11,12 @@ class GoalsChildPage extends StatefulWidget {
   State<GoalsChildPage> createState() => _GoalsChildPageState();
 }
 
-class _GoalsChildPageState extends State<GoalsChildPage> with TickerProviderStateMixin {
-  late AnimationController controller;
-
+class _GoalsChildPageState extends State<GoalsChildPage> {
   @override
   void initState() {
-    controller = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 5),
-    )..addListener(() {
-        setState(() {});
-      });
-    controller.repeat(reverse: true);
     super.initState();
   }
 
- 
- 
- 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +27,6 @@ class _GoalsChildPageState extends State<GoalsChildPage> with TickerProviderStat
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(
               height: 20,
@@ -66,11 +55,124 @@ class _GoalsChildPageState extends State<GoalsChildPage> with TickerProviderStat
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 30,
             ),
-            LinearProgressIndicator(
-              value: controller.value,
-              semanticsLabel: 'Linear progress indicator',
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        '   Para minha bicicleta:',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          color: UiConfig.colorScheme.tertiary,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  LinearPercentIndicator(
+                    width: MediaQuery.of(context).size.width - 50,
+                    animation: true,
+                    lineHeight: 25.0,
+                    animationDuration: 2500,
+                    percent: 0.8,
+                    center: Text(
+                      "80.0%",
+                      style: TextStyle(
+                          color: UiConfig.colorScheme.surface,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    barRadius: const Radius.circular(8),
+                    //linearStrokeCap: LinearStrokeCap.roundAll,
+                    progressColor: UiConfig.colorScheme.primary,
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        '   Para meu celular:',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          color: UiConfig.colorScheme.tertiary,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  LinearPercentIndicator(
+                    width: MediaQuery.of(context).size.width - 50,
+                    animation: true,
+                    lineHeight: 25.0,
+                    animationDuration: 2500,
+                    percent: 0.5,
+                    center: Text(
+                      "50.0%",
+                      style: TextStyle(
+                          color: UiConfig.colorScheme.surface,
+                          fontWeight: FontWeight.bold),
+                    ),
+
+                    barRadius: const Radius.circular(8),
+                    //linearStrokeCap: LinearStrokeCap.roundAll,
+                    progressColor: UiConfig.colorScheme.primary,
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        '   Para meu celular:',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          color: UiConfig.colorScheme.tertiary,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  LinearPercentIndicator(
+                    width: MediaQuery.of(context).size.width - 50,
+                    animation: true,
+                    lineHeight: 25.0,
+                    animationDuration: 2500,
+                    percent: 0.1,
+                    center: Text(
+                      "1.0%",
+                      style: TextStyle(
+                          color: UiConfig.colorScheme.surface,
+                          fontWeight: FontWeight.bold),
+                    ),
+
+                    barRadius: const Radius.circular(8),
+                    //linearStrokeCap: LinearStrokeCap.roundAll,
+                    progressColor: UiConfig.colorScheme.primary,
+                  ),
+                  const SizedBox(
+                    height: 60,
+                  ),
+                  ButtonColorBright(label: 'Nova Meta', onPressed: () {
+                    Navigator.of(context).pushNamed('/extractValueChildPage');
+                  }),
+                ],
+              ),
             ),
           ],
         ),

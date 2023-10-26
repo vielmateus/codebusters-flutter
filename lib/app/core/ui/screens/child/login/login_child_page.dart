@@ -59,7 +59,7 @@ class LoginChildPage extends StatelessWidget {
                     const Text(
                       'Fazer Login:',
                       style: TextStyle(
-                        fontSize: 24,
+                        fontSize: 24, 
                         fontWeight: FontWeight.normal,
                         color: Color(0xff505050),
                       ),
@@ -79,7 +79,6 @@ class LoginChildPage extends StatelessWidget {
                           label: 'Entrar',
                           onPressed: () {
                             Navigator.pushNamed(context, '/homePageChild');
-                            
                           },
                         ),
                       ],

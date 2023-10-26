@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hackaton/app/core/helpers/environments.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 
 class AgeGroupPage extends StatelessWidget {

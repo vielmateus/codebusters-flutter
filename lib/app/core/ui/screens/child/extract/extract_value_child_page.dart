@@ -1,3 +1,4 @@
+import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hackaton/app/core/data/money/service/extract_item_service.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
@@ -11,7 +12,7 @@ class ExtractValueChildPage extends StatefulWidget {
 }
 
 class _ExtractValueCartPageState extends State<ExtractValueChildPage> {
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +52,7 @@ class _ExtractValueCartPageState extends State<ExtractValueChildPage> {
                               color: UiConfig.colorScheme.tertiary),
                         ),
                         Text(
-                          'Consulte as datas e valores das transações.',
+                          'Consulte os valores depositados pelo seu responsável.',
                           style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
@@ -60,7 +61,6 @@ class _ExtractValueCartPageState extends State<ExtractValueChildPage> {
                         const SizedBox(
                           height: 16,
                         ),
-                        Text('Calendário'),
                         const SizedBox(
                           height: 16,
                         ),
@@ -106,13 +106,16 @@ class _ExtractValueCartPageState extends State<ExtractValueChildPage> {
                 return ListView.builder(
                   itemCount: 1,
                   itemBuilder: (context, index) {
-                    return Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('19/08/2023'),
-                        Text('asd'),
-                        Text('R\$15,00'),
-                      ],
+                    return const Padding(
+                      padding: EdgeInsets.only(left: 12, right: 12),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('19/08/2023'),
+                          Text('asd'),
+                          Text('R\$15,00'),
+                        ],
+                      ),
                     );
                   },
                 );
@@ -125,26 +128,4 @@ class _ExtractValueCartPageState extends State<ExtractValueChildPage> {
   }
 }
 
-ListView _listaDados() {
-  var items = List<String>.generate(10000, (i) => 'Item $i');
 
-  return ListView.builder(
-    shrinkWrap: true,
-    itemCount: items.length,
-    prototypeItem: ListTile(
-      title: Text(items.first),
-    ),
-    itemBuilder: (context, index) {
-      return const ListTile(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text('19/08/2023'),
-            Text('R\$5,00'),
-            Text('R\$15,00'),
-          ],
-        ),
-      );
-    },
-  );
-}
