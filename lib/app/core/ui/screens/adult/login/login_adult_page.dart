@@ -77,7 +77,9 @@ class LoginAdultPage extends StatelessWidget {
                       children: [
                         ButtonColorDark(
                           label: 'Entrar',
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/homePage');
+                          },
                         ),
                       ],
                     ),

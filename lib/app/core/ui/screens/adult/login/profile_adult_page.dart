@@ -18,8 +18,27 @@ class ProfileAdultPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,          
             children: [
-              const CircleAvatar(
-                radius: 80,
+
+              Image.asset('assets/images/person_30_40.png'),
+              const SizedBox(
+                height: 15,
+              ),
+              const Text('Perfil',
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)
+              ),
+              Text('Por aqui você pode editar e personalizar o seu perfil!',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.normal,
+                    color: UiConfig.colorScheme.onTertiary,
+                  )
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Image.asset('assets/images/adult_exemple.png'),
+              const SizedBox(
+                height: 20,
               ),
               const SizedBox(height: 20,),
               TextFieldOutline(label: 'Nome:'),
@@ -27,7 +46,7 @@ class ProfileAdultPage extends StatelessWidget {
               TextFieldOutline(label: 'Email:'),
               TextFieldOutline(label: 'Senha:'),
               const SizedBox(height: 20,),
-              ButtonColorBright(label: 'Gravar', onPressed: (){}),
+              ButtonColorBright(label: 'Salvar', onPressed: (){}),
             ],
           ),
         ),

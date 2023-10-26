@@ -22,6 +22,8 @@ import 'package:flutter_hackaton/app/core/ui/screens/child/money/piggy_bank_page
 import 'package:flutter_hackaton/app/core/ui/screens/child/objectives/goals_child_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/home_page.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
+import 'package:flutter_hackaton/app/core/ui/screens/child/Safe/safe_page.dart';
+import 'package:flutter_hackaton/app/core/ui/screens/child/objectives/activities_child_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -56,7 +58,9 @@ class MyApp extends StatelessWidget {
         '/payRewardPage': (context) => const PayRewardPage(),
         '/extractValueChildPage': (context) => const ExtractValueChildPage(),
         '/goalsChildPage': (context) => const GoalsChildPage(),
+        '/safePage': (context) => const SafePage(),
         '/piggyBankPage': (context) => const PiggyBankPage(),
+        '/activitiesChild': (context) => const ActivitiesChildPage(),
       },
       debugShowCheckedModeBanner: false,
       home: AnimatedSplashScreen.withScreenFunction(
