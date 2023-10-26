@@ -23,6 +23,7 @@ import 'package:flutter_hackaton/app/core/ui/screens/child/objectives/goals_chil
 import 'package:flutter_hackaton/app/core/ui/screens/home_page.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/home/home_page_child.dart';
+import 'package:flutter_hackaton/app/core/ui/screens/child/objectives/activities_child_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -59,6 +60,7 @@ class MyApp extends StatelessWidget {
         '/goalsChildPage': (context) => const GoalsChildPage(),
         '/piggyBankPage': (context) => const PiggyBankPage(),
         '/safePage': (context) => const SafePage(),
+        '/activitiesChildPage': (context) => const ActivitiesChildPage(),
       },
       debugShowCheckedModeBanner: false,
       home: AnimatedSplashScreen.withScreenFunction(

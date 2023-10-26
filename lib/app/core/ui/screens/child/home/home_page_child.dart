@@ -36,7 +36,7 @@ class HomePageChild extends StatelessWidget {
               ),
               Image.asset('assets/images/banner_home.png'),
               const SizedBox(
-                height: 20,
+                height: 30,
               ),
               CardIcon(
                   label: 'Perfil',
@@ -50,7 +50,9 @@ class HomePageChild extends StatelessWidget {
               CardIcon(
                   label: 'Atividades',
                   dirImage: 'assets/icons/icon_activities_min.png',
-                  onPressed: () {}),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/activitiesChildPage');
+                  }),
               const SizedBox(
                 height: 10,
               ),

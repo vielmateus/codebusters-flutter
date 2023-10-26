@@ -13,7 +13,7 @@ class RegisterAdultPage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset('assets/icons/image_icon_register.png'),
+          Image.asset('assets//image_icon_register.png'),
           const SizedBox(height: 10),
           Text(
             'Criar Cadastro',

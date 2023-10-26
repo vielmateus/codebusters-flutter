@@ -26,5 +26,6 @@ class UiConfig {
         surface: Color(0xffE0E0E0),//Color(0xffBD89CE),
         onSurface: Color(0xffF5F5F5),
         outline: Color(0xffE6E6E6),
+        surfaceVariant: Color(0xff108d1c),
       );
 }

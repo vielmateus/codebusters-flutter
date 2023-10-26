@@ -3,6 +3,7 @@ import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/button_color_bright.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/button_color_dark.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/text_field_outline.dart';
+import 'package:flutter_hackaton/app/core/ui/screens/home_page.dart';
 
 class LoginAdultPage extends StatelessWidget {
   const LoginAdultPage({super.key});
@@ -77,7 +78,9 @@ class LoginAdultPage extends StatelessWidget {
                       children: [
                         ButtonColorDark(
                           label: 'Entrar',
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/homePage');
+                          },
                         ),
                       ],
                     ),
