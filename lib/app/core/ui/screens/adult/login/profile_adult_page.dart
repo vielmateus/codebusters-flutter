@@ -19,24 +19,24 @@ class ProfileAdultPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,          
             children: [
 
-              Image.asset('assets/images/person_30_40.png'),
-              const SizedBox(
-                height: 15,
-              ),
-              const Text('Perfil',
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)
-              ),
-              Text('Por aqui você pode editar e personalizar o seu perfil!',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal,
-                    color: UiConfig.colorScheme.onTertiary,
-                  )
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              Image.asset('assets/images/adult_exemple.png'),
+              // Image.asset('assets/images/person_30_40.png'),
+              // const SizedBox(
+              //   height: 15,
+              // ),
+              // const Text('Perfil',
+              //     style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)
+              // ),
+              // Text('Por aqui você pode editar e personalizar o seu perfil!',
+              //     style: TextStyle(
+              //       fontSize: 14,
+              //       fontWeight: FontWeight.normal,
+              //       color: UiConfig.colorScheme.onTertiary,
+              //     )
+              // ),
+              // const SizedBox(
+              //   height: 30,
+              // ),
+              // Image.asset('assets/images/adult_exemple.png'),
               const SizedBox(
                 height: 20,
               ),

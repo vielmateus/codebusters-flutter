@@ -8,7 +8,23 @@ class BottonNavigationBarChildIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConvexAppBar(
-      onTap: (int i) => print('TAB INDEX $i'),
+      onTap: (int i) {
+        if (i == 0) {
+          Navigator.of(context).pushNamed('/walletPage');
+        }
+        if (i == 1) {
+          Navigator.of(context).pushNamed('/monitoringDataPage');
+        }
+        if (i == 2) {
+          Navigator.of(context).pushNamed('/homePageChild');
+        }
+        if (i == 3) {
+          Navigator.of(context).pushNamed('/profileAdultPage');
+        }
+        if (i == 4) {
+          Navigator.of(context).pushNamed('/piggyBankPage');
+        }
+      },
       style: TabStyle.fixedCircle,
       initialActiveIndex: 2,
       activeColor: UiConfig.colorScheme.onPrimary,

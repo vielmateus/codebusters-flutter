@@ -13,8 +13,9 @@ class RegisterAdultPage extends StatelessWidget {
     adultStore = AdultStore();
   }
   void _save(BuildContext context) {
-    adultStore.save().then((value) => Navigator.of(context)
-        .pushNamedAndRemoveUntil('homePage', (route) => false));
+    Navigator.of(context).pushNamed('/homePage');
+    // adultStore.save().then((value) => Navigator.of(context)
+    //     .pushNamedAndRemoveUntil('/homePage', (route) => false));
   }
 
   final formKey = GlobalKey<FormState>();
@@ -65,16 +66,30 @@ class RegisterAdultPage extends StatelessWidget {
               TextFieldOutline(
                 label: 'Senha:',
                 control: senha,
+                validatorless: Validatorless.multiple([
+                  Validatorless.required('É obrigatório informar a senha.'),
+                  Validatorless.min(
+                      6, 'A senha deve ter no mínimo seis caracteres.')
+                ]),
                 onTap: (value) => adultStore.setSenha(value),
               ),
               const SizedBox(height: 5),
-              TextFieldOutline(label: 'Confirmar Senha:'),
+              TextFieldOutline(
+                  label: 'Confirmar Senha:',
+                  validatorless: Validatorless.multiple([
+                    Validatorless.compare(
+                        senha, 'Senha e confirma senha devem ser iguais.'),
+                    Validatorless.required('É obrigatório confirmar a senha.')
+                  ])),
               const SizedBox(height: 5),
               TextFieldOutline(
                 label: 'CPF:',
                 control: cpf,
                 onTap: (value) => adultStore.setCPF(value),
-                validatorless: Validatorless.cpf('O CPF não é valido.'),
+                validatorless: Validatorless.multiple([
+                  Validatorless.required('O CPF é obrigatório'),
+                  Validatorless.cpf('O CPF não é valido.')
+                ]),
               ),
               const SizedBox(height: 10),
               Row(
