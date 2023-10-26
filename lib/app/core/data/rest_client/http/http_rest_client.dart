@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:math';
 
 import 'package:flutter_hackaton/app/core/data/rest_client/rest_client_exception.dart';
 import 'package:flutter_hackaton/app/core/helpers/constants.dart';
@@ -38,8 +37,6 @@ class HttpRestClint implements RestClient {
     try {
       var url = Uri.parse('${Environments.param(Constants.ENV_BASE_URL_KEY) ?? ''}$path');
 
-      print(url.data);
-
       //var url = Uri.https('www.googleapis.com', '/books/v1/volumes', {'q': '{http}'});
       
       // var baseUrl = Environments.param(Constants.ENV_BASE_URL_KEY) ?? '';
@@ -47,9 +44,6 @@ class HttpRestClint implements RestClient {
       //     path, {'q': '{http}'});
       
       final response = await http.get(url);
-
-      print(response.statusCode);
-      print(response.body);
 
       return _httpResponseConverter(response);
     } on HttpException catch (e) {
@@ -113,7 +107,7 @@ class HttpRestClint implements RestClient {
       response: RestClientResponse(
         data: '',
         statusCode: 0,
-        statusMessage: response?.message,
+        statusMessage: response.message,
       ),
     );
   }

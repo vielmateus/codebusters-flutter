@@ -2,8 +2,8 @@ import 'package:flutter_hackaton/app/core/data/money/model/extract_item_model.da
 
 abstract class IExtractItemRepository {
 
-  Future<ExtractItemModel?> getOne(int id);
+  Future<ExtractItemModel?> getOneByApi(int id);
 
-  Future<List<ExtractItemModel>> getAll();
+  Future<List<ExtractItemModel>> getAllByApi();
   
 }

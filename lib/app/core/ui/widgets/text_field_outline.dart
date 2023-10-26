@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
-import 'package:validatorless/validatorless.dart';
 
 class TextFieldOutline extends StatelessWidget {
   final String? hintText;
   final String label;
   final TextEditingController? control;
   String? Function(String?)? validatorless;
+  ValueChanged<String>? onTap;
 
-  TextFieldOutline({this.hintText, required this.label, this.control, this.validatorless, super.key});
+  TextFieldOutline({this.hintText, required this.label, this.control, this.validatorless, this.onTap, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +35,7 @@ class TextFieldOutline extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10.0),
             child: TextFormField(
+              onChanged: onTap,
               validator: validatorless,
               controller: control,
               decoration: InputDecoration(

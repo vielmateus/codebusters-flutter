@@ -20,7 +20,7 @@ import 'package:flutter_hackaton/app/core/ui/screens/child/login/profile_child_p
 import 'package:flutter_hackaton/app/core/ui/screens/child/login/register_child_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/money/piggy_bank_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/objectives/goals_child_page.dart';
-import 'package:flutter_hackaton/app/core/ui/screens/home_page.dart';
+import 'package:flutter_hackaton/app/core/ui/screens/adult/home/home_page.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/Safe/safe_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/objectives/activities_child_page.dart';

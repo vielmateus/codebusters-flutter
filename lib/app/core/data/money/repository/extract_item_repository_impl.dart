@@ -15,7 +15,7 @@ class ExtractItemRepository implements IExtractItemRepository {
       : _restClient = restClient;
 
   @override
-  Future<ExtractItemModel?> getOne(int id) async {
+  Future<ExtractItemModel?> getOneByApi(int id) async {
     try {
       RestClientResponse<String> extractItemResponse = await _restClient.get<String>('/01001000/json');
 
@@ -26,7 +26,7 @@ class ExtractItemRepository implements IExtractItemRepository {
   }
 
   @override
-  Future<List<ExtractItemModel>> getAll() async {
+  Future<List<ExtractItemModel>> getAllByApi() async {
     RestClientResponse<String> extractItemResponse = await _restClient.get<String>('/01001000/json');
 
     final extractItemResponseList = jsonDecode(extractItemResponse.data ?? "{}");
