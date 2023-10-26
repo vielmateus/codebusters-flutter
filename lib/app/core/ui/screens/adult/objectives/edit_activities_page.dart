@@ -28,7 +28,7 @@ class EditActivitiesPage extends StatelessWidget {
               color: UiConfig.colorScheme.secondary,
             ),
           ),
-          Text('09/ago/2020'),
+          const Text('09/ago/2020'),
           const SizedBox(
             height: 20,
           ),

@@ -1,4 +1,3 @@
-import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hackaton/app/core/data/money/service/extract_item_service.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';

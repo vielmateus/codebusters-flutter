@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 
+// ignore: must_be_immutable
 class CardIcon extends StatelessWidget {
   
   String label;

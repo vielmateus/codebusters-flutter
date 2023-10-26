@@ -50,7 +50,7 @@ class _ActivitiesChildPageState extends State<ActivitiesChildPage> {
           const SizedBox(
             height: 10,
           ),
-          Text('09/ago/2020'),
+          const Text('09/ago/2020'),
           const SizedBox(
             height: 20,
           ),

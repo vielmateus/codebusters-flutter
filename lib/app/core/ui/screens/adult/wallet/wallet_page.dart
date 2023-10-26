@@ -258,7 +258,7 @@ void showSuccessMessage(BuildContext context) async {
           ],
         ),
       ),
-      actions: <Widget>[],
+      actions: const<Widget>[],
     ),
   );
 }

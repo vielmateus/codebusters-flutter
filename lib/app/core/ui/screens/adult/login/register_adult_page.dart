@@ -5,6 +5,7 @@ import 'package:flutter_hackaton/app/core/ui/widgets/button_color_dark.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/text_field_outline.dart';
 import 'package:validatorless/validatorless.dart';
 
+// ignore: must_be_immutable
 class RegisterAdultPage extends StatelessWidget {
   late AdultStore adultStore;
 
@@ -83,8 +84,7 @@ class RegisterAdultPage extends StatelessWidget {
                       label: 'Cadastrar',
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
-                          adultStore.save();
-                          Navigator.pushNamed(context, '/registerChildPage');
+                          _save(context);
                         }
                       }),
                 ],

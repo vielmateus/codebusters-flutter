@@ -1,4 +1,3 @@
-import 'package:flutter_hackaton/app/core/data/adult/model/adult_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesLocal {

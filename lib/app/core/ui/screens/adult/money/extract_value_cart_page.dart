@@ -60,7 +60,7 @@ class _ExtractValueCartPageState extends State<ExtractValueCartPage> {
                         const SizedBox(
                           height: 16,
                         ),
-                        Text('Calendário'),
+                        const Text('Calendário'),
                         const SizedBox(
                           height: 16,
                         ),
@@ -123,28 +123,4 @@ class _ExtractValueCartPageState extends State<ExtractValueCartPage> {
       ),
     );
   }
-}
-
-ListView _listaDados() {
-  var items = List<String>.generate(10000, (i) => 'Item $i');
-
-  return ListView.builder(
-    shrinkWrap: true,
-    itemCount: items.length,
-    prototypeItem: ListTile(
-      title: Text(items.first),
-    ),
-    itemBuilder: (context, index) {
-      return const ListTile(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text('19/08/2023'),
-            Text('R\$5,00'),
-            Text('R\$15,00'),
-          ],
-        ),
-      );
-    },
-  );
 }

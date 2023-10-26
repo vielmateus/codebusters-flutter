@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_child_icon.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/button_color_bright.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/text_field_outline.dart';
-import 'package:flutter_hackaton/app/core/ui/screens/child/home/home_page_child.dart';
 
 import '../../../ui_config.dart';
 
