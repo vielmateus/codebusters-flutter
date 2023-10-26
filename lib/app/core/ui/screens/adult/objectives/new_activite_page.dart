@@ -39,9 +39,9 @@ class NewActivitePage extends StatelessWidget {
                 const SizedBox(
                   height: 50,
                 ),
-                const TextFieldOutline(label: 'Atividade'),
-                const TextFieldOutline(label: 'Valor'),
-                const TextFieldOutline(label: 'Data'),
+                TextFieldOutline(label: 'Atividade'),
+                TextFieldOutline(label: 'Valor'),
+                TextFieldOutline(label: 'Data'),
                 const SizedBox(
                   height: 50,
                 ),

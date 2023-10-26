@@ -26,8 +26,8 @@ class ProfileChildPage extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const TextFieldOutline(label: 'Como ela gosta de ser chamada(o) ?:'),
-              const TextFieldOutline(label: 'Quantos anos ela tem?'),
+              TextFieldOutline(label: 'Como ela gosta de ser chamada(o) ?:'),
+              TextFieldOutline(label: 'Quantos anos ela tem?'),
               const SizedBox(
                 height: 20,
               ),

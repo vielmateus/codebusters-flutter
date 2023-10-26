@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
         '/ageGroupPage': (context) => const AgeGroupPage(),
         '/loginChildPage': (context) => const LoginChildPage(),
         '/loginAdultPage': (context) => const LoginAdultPage(),
-        '/registerAdultPage': (context) => const RegisterAdultPage(),
+        '/registerAdultPage': (context) => RegisterAdultPage(),
         '/registerChildPage': (context) => const RegisterChildPage(),
         '/profileAdultPage': (context) => const ProfileAdultPage(),
         '/profileChildPage': (context) => const ProfileChildPage(), //Ainda não é chamada

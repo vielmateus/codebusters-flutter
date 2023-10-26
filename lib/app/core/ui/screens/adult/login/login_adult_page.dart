@@ -67,8 +67,8 @@ class LoginAdultPage extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    const TextFieldOutline(label: 'Usuário'),
-                    const TextFieldOutline(label: 'Senha'),
+                    TextFieldOutline(label: 'Usuário'),
+                    TextFieldOutline(label: 'Senha'),
                     const SizedBox(
                       height: 15,
                     ),

@@ -67,8 +67,8 @@ class LoginChildPage extends StatelessWidget {
                     const SizedBox(
                       height: 16,
                     ),
-                    const TextFieldOutline(label: 'Usuário'),
-                    const TextFieldOutline(label: 'Senha'),
+                    TextFieldOutline(label: 'Usuário'),
+                    TextFieldOutline(label: 'Senha'),
                     const SizedBox(
                       height: 70,
                     ),
