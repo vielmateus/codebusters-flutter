@@ -50,14 +50,16 @@ class HomePageChild extends StatelessWidget {
               CardIcon(
                   label: 'Atividades',
                   dirImage: 'assets/icons/icon_list.png',
-                  onPressed: () {}),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/activitiesChild');
+                  }),
               const SizedBox(
                 height: 10,
               ),
               CardIcon(label: 'Cofrinho',
                   dirImage: 'assets/icons/icon_pig.png',
                   onPressed: () {
-                    Navigator.pushNamed(context, '/piggyBankPage');
+                    Navigator.pushNamed(context, '/safePage');
                   } ),
 
               const SizedBox(
