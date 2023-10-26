@@ -49,13 +49,13 @@ class HomePageChild extends StatelessWidget {
               ),
               CardIcon(
                   label: 'Atividades',
-                  dirImage: 'assets/icons/icon_list.png',
+                  dirImage: 'assets/icons/icon_activities_min.png',
                   onPressed: () {}),
               const SizedBox(
                 height: 10,
               ),
               CardIcon(label: 'Cofrinho',
-                  dirImage: 'assets/icons/icon_pig.png',
+                  dirImage: 'assets/icons/icon_pig_min.png',
                   onPressed: () {
                     Navigator.pushNamed(context, '/safePage');
                   } ),

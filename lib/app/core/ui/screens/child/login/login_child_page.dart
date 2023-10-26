@@ -78,6 +78,7 @@ class LoginChildPage extends StatelessWidget {
                         ButtonColorDark(
                           label: 'Entrar',
                           onPressed: () {
+                            Navigator.pushNamed(context, '/homePageChild');
                             
                           },
                         ),

@@ -17,7 +17,7 @@ class BottonNavigationBarChildIcon extends StatelessWidget {
       backgroundColor: UiConfig.colorScheme.onPrimary,
       items: [
         TabItem(icon: Image.asset('assets/icons/icon_dart.png')),
-        TabItem(icon: Image.asset('assets/icons/icon_list.png')),
+        TabItem(icon: Image.asset('assets/icons/icon_activities_min.png')),
         TabItem(icon: Image.asset('assets/icons/icon_home.png')),
         TabItem(icon: Image.asset('assets/icons/icon_person.png')),
         TabItem(icon: Image.asset('assets/icons/icon_pig.png')),
