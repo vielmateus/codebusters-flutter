@@ -61,7 +61,7 @@ class _ExtractValueCartPageState extends State<ExtractValueCartPage> {
                         const SizedBox(
                           height: 16,
                         ),
-                        Calendar(),
+                        const Calendar(),
                         const SizedBox(
                           height: 16,
                         ),

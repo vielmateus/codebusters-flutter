@@ -23,8 +23,16 @@ import 'package:flutter_hackaton/app/core/ui/screens/adult/home/home_page.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/safe/safe_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/objectives/activities_child_page.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(const MyApp());
 }
 
@@ -47,7 +55,7 @@ class MyApp extends StatelessWidget {
         '/registerAdultPage': (context) => RegisterAdultPage(),
         '/registerChildPage': (context) => const RegisterChildPage(),
         '/profileAdultPage': (context) => const ProfileAdultPage(),
-        '/profileChildPage': (context) => const ProfileChildPage(), 
+        '/profileChildPage': (context) => const ProfileChildPage(),
         '/walletPage': (context) => const WalletPage(),
         '/sucessRecharge': (context) => const SucessRecharge(),
         '/extractValueCartPage': (context) => const ExtractValueCartPage(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hackaton/app/core/local_storage/shared_preferences/shared_preferences.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/button_color_bright.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/button_color_dark.dart';
@@ -77,8 +78,27 @@ class LoginAdultPage extends StatelessWidget {
                       children: [
                         ButtonColorDark(
                           label: 'Entrar',
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/homePage');
+                          onPressed: () async {
+                            var userM =
+                                await SharedPreferencesLocal().read('userM');
+                            var userJ =
+                                await SharedPreferencesLocal().read('userJ');
+                            var password =
+                                await SharedPreferencesLocal().read('password');
+
+                            if ((userM == 'vielmateus@gmail.com' ||
+                                    userJ == 'joaorafarinha@gmail.com') &&
+                                (password == '123456')) {
+                              Navigator.pushNamed(context, '/homePage');
+                            } else {
+                              final snackBar = SnackBar(
+                                content:
+                                    const Text('Usuário ou senha incorretos.'),
+                              );
+
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(snackBar);
+                            }
                           },
                         ),
                       ],
@@ -105,7 +125,7 @@ class LoginAdultPage extends StatelessWidget {
                       children: [
                         ButtonColorBright(
                           label: 'Criar Conta',
-                          onPressed: () {
+                          onPressed: () async {
                             Navigator.pushNamed(context, '/registerAdultPage');
                           },
                         ),
