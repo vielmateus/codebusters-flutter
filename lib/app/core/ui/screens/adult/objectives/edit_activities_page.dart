@@ -36,8 +36,8 @@ class EditActivitiesPage extends StatelessWidget {
               child: listaDados(
             () => Navigator.of(context).pushNamed('/newActivitePage'),
             () {
-              showAlertDialog(context, (){
-                print('Confirmou');                
+              showAlertDialog(context, () {
+                print('Confirmou');
               });
             },
           )),
@@ -55,7 +55,7 @@ class EditActivitiesPage extends StatelessWidget {
               ),
               ButtonColorBright(
                 label: 'Salvar',
-                onPressed: (){
+                onPressed: () {
                   showSuccessMessage(context);
                 },
               ),
@@ -81,6 +81,9 @@ Widget lineItemEditRemove(
           InkWell(
               onTap: onEditClick,
               child: Image.asset('assets/icons/icon_edit_one.png')),
+          const SizedBox(
+            width: 10,
+          ),
           InkWell(
               onTap: onRemoveClick,
               child: Image.asset('assets/icons/icon_remove.png')),
@@ -104,6 +107,7 @@ ListView listaDados(VoidCallback onEditClick, VoidCallback onRemoveClick) {
     },
   );
 }
+
 void showSuccessMessage(BuildContext context) async {
   await showDialog(
     context: context,

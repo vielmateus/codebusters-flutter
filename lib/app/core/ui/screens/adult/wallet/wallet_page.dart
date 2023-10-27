@@ -87,6 +87,7 @@ class WalletPage extends StatelessWidget {
                     builder: (BuildContext context) {
                       return AddValueScreen(
                         onTap: () {
+                          
                           Navigator.of(context).popAndPushNamed('/sucessRecharge');                        
                         },
                       );

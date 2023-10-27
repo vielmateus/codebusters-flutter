@@ -10,6 +10,20 @@ class LoginAdultPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var user = '';
+    var password = '';
+    TextEditingController userTE = TextEditingController();
+    TextEditingController passwordTE = TextEditingController();
+
+    void returnLoginPassword() async {     
+      userTE.text = await SharedPreferencesLocal().read('user');
+      print(await SharedPreferencesLocal().read('user'));      
+      passwordTE.text = await SharedPreferencesLocal().read('password');
+      print(await SharedPreferencesLocal().read('password'));
+    }
+
+    returnLoginPassword();
+
     return Scaffold(
       backgroundColor: UiConfig.colorScheme.primary,
       appBar: AppBar(
@@ -68,8 +82,8 @@ class LoginAdultPage extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    TextFieldOutline(label: 'Usuário'),
-                    TextFieldOutline(label: 'Senha'),
+                    TextFieldOutline(label: 'Usuário', control: userTE,),
+                    TextFieldOutline(label: 'Senha', control: passwordTE,),
                     const SizedBox(
                       height: 15,
                     ),
@@ -89,8 +103,7 @@ class LoginAdultPage extends StatelessWidget {
                               Navigator.pushNamed(context, '/homePage');
                             } else {
                               const snackBar = SnackBar(
-                                content:
-                                    Text('Usuário ou senha incorretos.'),
+                                content: Text('Usuário ou senha incorretos.'),
                               );
 
                               ScaffoldMessenger.of(context)
