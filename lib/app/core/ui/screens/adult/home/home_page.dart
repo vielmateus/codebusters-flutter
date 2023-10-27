@@ -63,13 +63,13 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              CardIcon(
-                  label: 'Investimento',
-                  dirImage: 'assets/icons/icon_hand_money.png',
-                  onPressed: () {}),
-              const SizedBox(
-                height: 10,
-              ),
+              // CardIcon(
+              //     label: 'Investimento',
+              //     dirImage: 'assets/icons/icon_hand_money.png',
+              //     onPressed: () {}),
+              // const SizedBox(
+              //   height: 10,
+              // ),
               CardIcon(label: 'Sair',
                   dirImage: 'assets/icons/icon_logout.png',
                   onPressed: () {

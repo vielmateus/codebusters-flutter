@@ -24,7 +24,6 @@ import 'package:flutter_hackaton/app/core/ui/screens/adult/home/home_page.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/safe/safe_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/objectives/activities_child_page.dart';
-
 import 'package:flutter_hackaton/app/core/ui/screens/adult/objectives/select_child_monitoring.dart';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -56,7 +55,7 @@ class MyApp extends StatelessWidget {
         '/homePageChild': (context) => const HomePageChild(),
         '/ageGroupPage': (context) => const AgeGroupPage(),
         '/loginChildPage': (context) => LoginChildPage(),
-        '/loginAdultPage': (context) => LoginAdultPage(),
+        '/loginAdultPage': (context) => const LoginAdultPage(),
         '/registerAdultPage': (context) => RegisterAdultPage(),
         '/registerChildPage': (context) => const RegisterChildPage(),
         '/profileAdultPage': (context) => const ProfileAdultPage(),

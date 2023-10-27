@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hackaton/app/core/data/money/model/extract_item_model.dart';
 import 'package:flutter_hackaton/app/core/data/money/service/extract_item_service.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_icon.dart';
@@ -12,6 +13,9 @@ class ActivitiesChildPage extends StatefulWidget {
 
 class _ActivitiesChildPageState extends State<ActivitiesChildPage> {
   bool isChecked = false;
+
+  var lista = dadosMock();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,28 +59,16 @@ class _ActivitiesChildPageState extends State<ActivitiesChildPage> {
             height: 20,
           ),
           Expanded(
-            child: FutureBuilder(
-              future: ExtractItemService().getOneExtractItem(1),
-              builder: (context, snapshot) {
-                if (snapshot.hasError) {
-                  return Center(
-                    child: Text(snapshot.error.toString()),
-                  );
-                }
-                if (!snapshot.hasData) {
-                  const Center(
-                    child: CircularProgressIndicator(),
-                  );
-                }
-                return ListView.builder(
-                  itemCount: 1,
-                  itemBuilder: (context, index) {
-                    return cardItem(index: index, isChecked: isChecked, onTap: (value) {
-                      setState(() {
-                        isChecked = !isChecked;
-                      });
-                    },);
-                  },
+            child: ListView.builder(
+              itemCount: lista.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: cardItem(
+                      index: index,
+                      data: lista[index].dateEvent,
+                      saldo: lista[index].valueTransf,
+                      valor: lista[index].balance),
                 );
               },
             ),
@@ -90,24 +82,38 @@ class _ActivitiesChildPageState extends State<ActivitiesChildPage> {
   }
 }
 
-Widget cardItem({int index = 0, bool isChecked = false, ValueChanged<bool?>? onTap}) {
-  
+Widget cardItem(
+    {int index = 0, String data = '', String valor = '', String saldo = ''}) {
   return Container(
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(12),
       color: ((index % 2) == 0
           ? UiConfig.colorScheme.onSurface
-          : UiConfig.colorScheme.primaryContainer),
+          : UiConfig.colorScheme.onPrimary),
     ),
     padding: const EdgeInsets.all(16.0),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text('19/08/2023'),
-        const Text('asd'),
-        const Text('R\$15,00'),
-        Checkbox(value: isChecked, onChanged: onTap),
+        Text(data),
+        Text(valor),
+        Text('R\$ $saldo'),
       ],
     ),
   );
 }
+
+List<ExtractItemModel> dadosMock() {
+  List<ExtractItemModel> listaDeObjetos = [
+    ExtractItemModel(
+        dateEvent: "2023-10-27", balance: "Aprender Java", valueTransf: '5.00'),
+    ExtractItemModel(
+        dateEvent: "2023-10-28", balance: "Estudar Java", valueTransf: '3.50'),
+    ExtractItemModel(
+        dateEvent: "2023-10-28", balance: "API Java", valueTransf: '2.50'),
+    ExtractItemModel(
+        dateEvent: "2023-10-28", balance: "Cumprir Prazo", valueTransf: '2.50'),
+  ];
+  return listaDeObjetos;
+}
+

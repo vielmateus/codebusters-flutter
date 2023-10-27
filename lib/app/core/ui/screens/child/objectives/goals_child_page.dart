@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
+import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_child_icon.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_icon.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/button_color_bright.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
@@ -20,7 +21,7 @@ class _GoalsChildPageState extends State<GoalsChildPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const BottonNavigationBarIcon(),
+      bottomNavigationBar: const BottonNavigationBarChildIcon(),
       appBar: AppBar(
         title: const Text('Atividades'),
       ),

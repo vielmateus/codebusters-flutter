@@ -25,18 +25,18 @@ class SafePage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const Text('Cofrinho', style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              )
-            ),
+            //   const Text('Cofrinho', style: TextStyle(
+            //     fontSize: 22,
+            //     fontWeight: FontWeight.bold,
+            //   )
+            // ),
               const SizedBox(
                 height: 10,
               ),
               Padding( padding: const EdgeInsets.fromLTRB(15, 0, 15, 0), child:
-              Text('Aqui você pode consultar as suas metas, ver o valor total do seu cofrinho e consultar a movimentação do seu dinheiro.',
+              Text('Aqui você pode consultar as suas metas, seu cofrinho e consulta a movimentação do seu dinheiro.',
                 style: TextStyle(
-                fontSize: 14,
+                fontSize: 13,
                 fontWeight: FontWeight.normal,
                 color: UiConfig.colorScheme.onTertiary,
               )

@@ -19,7 +19,7 @@ class BottonNavigationBarIcon extends StatelessWidget {
           Navigator.of(context).pushNamed('/homePageChild');
         }
         if (i == 3) {
-          Navigator.of(context).pushNamed('/profileChildPage');
+          Navigator.of(context).pushNamed('/profileAdultPage');
         }
         if (i == 4) {
           Navigator.of(context).pushNamed('/piggyBankPage');
