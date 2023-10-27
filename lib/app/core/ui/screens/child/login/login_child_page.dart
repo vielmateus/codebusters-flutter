@@ -13,6 +13,7 @@ class LoginChildPage extends StatelessWidget {
   TextEditingController user = TextEditingController();
   TextEditingController password = TextEditingController();
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,6 +65,7 @@ class LoginChildPage extends StatelessWidget {
                           ),
                         ],
                       ),
+
                       SingleChildScrollView(
                         child: Column(children: [
                           const Text(
@@ -123,7 +125,7 @@ class LoginChildPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                ),
+                 ),
               ),
             )
           ],

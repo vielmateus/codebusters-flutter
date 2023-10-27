@@ -25,7 +25,6 @@ class NewActivitePage extends StatelessWidget {
           bottomNavigationBar: const BottonNavigationBarIcon(),
           appBar: AppBar(
             title: const Text('Nova Atividade'),
-          ),
           body: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.all(12.0),
@@ -83,4 +82,41 @@ class NewActivitePage extends StatelessWidget {
           )),
     );
   }
+}
+
+void showSuccessMessage(BuildContext context) async {
+  await showDialog(
+    context: context,
+    builder: (contexto) => AlertDialog(
+      backgroundColor: UiConfig.colorScheme.primary,
+      content: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              "Atividades salvas com sucesso!",
+              style: TextStyle(color: UiConfig.colorScheme.surface),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset('assets/icons/icon_coins_one.png'),
+                const SizedBox(
+                  width: 10,
+                ),
+                Image.asset('assets/icons/icon_check.png'),
+                const SizedBox(
+                  width: 10,
+                ),
+                Image.asset('assets/icons/icon_coins_two.png'),
+              ],
+            )
+          ],
+        ),
+      ),
+    ),
+  );
 }

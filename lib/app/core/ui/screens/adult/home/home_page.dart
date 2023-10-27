@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
                   label: 'Monitoramento',
                   dirImage: 'assets/icons/icon_graphic.png',
                   onPressed: () {
-                    Navigator.of(context).pushNamed('/monitoringDataPage');
+                    Navigator.of(context).pushNamed('/selectChildMonitoring');
                   }),
               const SizedBox(
                 height: 10,
@@ -67,6 +67,14 @@ class HomePage extends StatelessWidget {
                   label: 'Investimento',
                   dirImage: 'assets/icons/icon_hand_money.png',
                   onPressed: () {}),
+              const SizedBox(
+                height: 10,
+              ),
+              CardIcon(label: 'Sair',
+                  dirImage: 'assets/icons/icon_logout.png',
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/ageGroupPage');
+                  } ),
             ],
           ),
         ),

@@ -55,7 +55,9 @@ class EditActivitiesPage extends StatelessWidget {
               ),
               ButtonColorBright(
                 label: 'Salvar',
-                onPressed: () {},
+                onPressed: (){
+                  showSuccessMessage(context);
+                },
               ),
             ],
           ),
@@ -100,5 +102,41 @@ ListView listaDados(VoidCallback onEditClick, VoidCallback onRemoveClick) {
     itemBuilder: (context, index) {
       return ListTile(title: lineItemEditRemove(onEditClick, onRemoveClick));
     },
+  );
+}
+void showSuccessMessage(BuildContext context) async {
+  await showDialog(
+    context: context,
+    builder: (contexto) => AlertDialog(
+      backgroundColor: UiConfig.colorScheme.primary,
+      content: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              "Atividades salvas com sucesso!",
+              style: TextStyle(color: UiConfig.colorScheme.surface),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset('assets/icons/icon_coins_one.png'),
+                const SizedBox(
+                  width: 10,
+                ),
+                Image.asset('assets/icons/icon_check.png'),
+                const SizedBox(
+                  width: 10,
+                ),
+                Image.asset('assets/icons/icon_coins_two.png'),
+              ],
+            )
+          ],
+        ),
+      ),
+    ),
   );
 }

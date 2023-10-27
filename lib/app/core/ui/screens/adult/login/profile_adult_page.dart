@@ -3,6 +3,7 @@ import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_icon.
 import 'package:flutter_hackaton/app/core/ui/widgets/button_color_bright.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/text_field_outline.dart';
 
+
 class ProfileAdultPage extends StatelessWidget {
   const ProfileAdultPage({super.key});
 
@@ -55,7 +56,11 @@ class ProfileAdultPage extends StatelessWidget {
               TextFieldOutline(label: 'Email:', control: email,),
               TextFieldOutline(label: 'Senha:', control: password,),
               const SizedBox(height: 20,),
-              ButtonColorBright(label: 'Salvar', onPressed: (){}),
+              ButtonColorBright(label: 'Salvar', onPressed: (){
+
+                Navigator.pushNamed(context, '/homePage');
+
+              }),
             ],
           ),
         ),

@@ -69,7 +69,8 @@ class HomePageChild extends StatelessWidget {
                   dirImage: 'assets/icons/icon_logout.png',
                   onPressed: () {
                     Navigator.pushNamed(context, '/ageGroupPage');
-                  } ),
+                }
+              ),
             ],
           ),
         ),

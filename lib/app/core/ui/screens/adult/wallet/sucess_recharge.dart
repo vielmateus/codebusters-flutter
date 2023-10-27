@@ -15,7 +15,7 @@ class _SucessRechargeState extends State<SucessRecharge> {
     super.initState();
 
     Future.delayed(
-      const Duration(seconds: 4),
+      const Duration(seconds: 2),
       () => Navigator.of(context).pop(),
     );
   }
