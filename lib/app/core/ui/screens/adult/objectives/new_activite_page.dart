@@ -25,6 +25,7 @@ class NewActivitePage extends StatelessWidget {
           bottomNavigationBar: const BottonNavigationBarIcon(),
           appBar: AppBar(
             title: const Text('Nova Atividade'),
+          ),
           body: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.all(12.0),
