@@ -4,8 +4,8 @@ import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_icon.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/button_color_bright.dart';
 
-class PiggyBankPage extends StatelessWidget {
-  const PiggyBankPage({super.key});
+class PiggyBankChildPage extends StatelessWidget {
+  const PiggyBankChildPage({super.key});
 
   @override
   Widget build(BuildContext context) {

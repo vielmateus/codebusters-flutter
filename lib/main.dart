@@ -11,18 +11,18 @@ import 'package:flutter_hackaton/app/core/ui/screens/adult/objectives/monitoring
 import 'package:flutter_hackaton/app/core/ui/screens/adult/objectives/new_activite_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/adult/objectives/register_child_monitoring.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/adult/wallet/sucess_recharge.dart';
-import 'package:flutter_hackaton/app/core/ui/screens/adult/wallet/wallet_page.dart';
+import 'package:flutter_hackaton/app/core/ui/screens/adult/wallet/wallet_adult_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/age_group_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/extract/extract_value_child_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/home/home_page_child.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/login/login_child_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/login/profile_child_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/login/register_child_page.dart';
-import 'package:flutter_hackaton/app/core/ui/screens/child/money/piggy_bank_page.dart';
+import 'package:flutter_hackaton/app/core/ui/screens/child/money/piggy_bank_child_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/objectives/goals_child_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/adult/home/home_page.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
-import 'package:flutter_hackaton/app/core/ui/screens/child/safe/safe_page.dart';
+import 'package:flutter_hackaton/app/core/ui/screens/child/safe/safe_child_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/objectives/activities_child_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/adult/objectives/select_child_monitoring.dart';
 
@@ -51,30 +51,32 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: {
-        '/homePage': (context) => const HomePage(),
-        '/homePageChild': (context) => const HomePageChild(),
         '/ageGroupPage': (context) => const AgeGroupPage(),
-        '/loginChildPage': (context) => LoginChildPage(),
+
+        '/homePage': (context) => const HomePage(),
         '/loginAdultPage': (context) => const LoginAdultPage(),
         '/registerAdultPage': (context) => RegisterAdultPage(),
-        '/registerChildPage': (context) => const RegisterChildPage(),
         '/profileAdultPage': (context) => const ProfileAdultPage(),
-        '/profileChildPage': (context) => const ProfileChildPage(),
-        '/walletPage': (context) => const WalletPage(),
+        '/walletAdultPage': (context) => const WalletAdultPage(),
         '/sucessRecharge': (context) => const SucessRecharge(),
         '/extractValueCartPage': (context) => const ExtractValueCartPage(),
         '/monitoringDataPage': (context) => const MonitoringDataPage(),
         '/editActivitiesPage': (context) => const EditActivitiesPage(),
         '/newActivitePage': (context) => NewActivitePage(),
         '/payRewardPage': (context) => const PayRewardPage(),
+        
+        '/safePage': (context) => const SafeChildPage(),
+        '/piggyBankChildPage': (context) => const PiggyBankChildPage(),
+        '/loginChildPage': (context) => LoginChildPage(),
+        '/registerChildPage': (context) => const RegisterChildPage(),
+        '/homePageChild': (context) => const HomePageChild(),
+        '/profileChildPage': (context) => const ProfileChildPage(),
         '/extractValueChildPage': (context) => const ExtractValueChildPage(),
         '/goalsChildPage': (context) => const GoalsChildPage(),
-        '/safePage': (context) => const SafePage(),
-        '/piggyBankPage': (context) => const PiggyBankPage(),
         '/activitiesChild': (context) => const ActivitiesChildPage(),
         '/selectChildMonitoring': (context) => const SelectChildMonitoring(),
         '/registerChildMonitoring': (context) => const RegisterChildMonitoring(),
-        'selectChildMonitoring': (context) => const SelectChildMonitoring(),
+        
       },
       debugShowCheckedModeBanner: false,
       home: AnimatedSplashScreen.withScreenFunction(

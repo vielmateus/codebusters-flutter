@@ -3,8 +3,8 @@ import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_child_icon.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/card_icon.dart';
 
-class SafePage extends StatelessWidget {
-  const SafePage({super.key});
+class SafeChildPage extends StatelessWidget {
+  const SafeChildPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +57,7 @@ class SafePage extends StatelessWidget {
               CardIcon(label: 'Valor do Cofrinho',
                   dirImage: 'assets/icons/icon_coins.png',
                   onPressed: () {
-                    Navigator.pushNamed(context, '/piggyBankPage');
+                    Navigator.pushNamed(context, '/piggyBankChildPage');
                   }
                 ),
               const SizedBox(

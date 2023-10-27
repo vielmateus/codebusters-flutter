@@ -5,8 +5,8 @@ import 'package:flutter_hackaton/app/core/ui/widgets/button_color_bright.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/card_icon.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/text_field_outline_number.dart';
 
-class WalletPage extends StatelessWidget {
-  const WalletPage({super.key});
+class WalletAdultPage extends StatelessWidget {
+  const WalletAdultPage({super.key});
 
   @override
   Widget build(BuildContext context) {

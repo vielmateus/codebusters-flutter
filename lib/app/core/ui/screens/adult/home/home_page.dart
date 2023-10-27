@@ -58,7 +58,7 @@ class HomePage extends StatelessWidget {
                   label: 'Carteira | Conta',
                   dirImage: 'assets/icons/icon_wallet.png',
                   onPressed: () {
-                    Navigator.pushNamed(context, '/walletPage');
+                    Navigator.pushNamed(context, '/walletAdultPage');
                   }),
               const SizedBox(
                 height: 10,
