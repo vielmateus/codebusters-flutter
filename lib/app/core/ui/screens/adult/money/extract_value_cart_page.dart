@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hackaton/app/core/data/money/service/extract_item_service.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_icon.dart';
+import 'package:flutter_hackaton/app/core/ui/widgets/dialog_calendar.dart';
 
 class ExtractValueCartPage extends StatefulWidget {
   const ExtractValueCartPage({super.key});
@@ -60,7 +61,7 @@ class _ExtractValueCartPageState extends State<ExtractValueCartPage> {
                         const SizedBox(
                           height: 16,
                         ),
-                        const Text('Calendário'),
+                        const Calendar(),
                         const SizedBox(
                           height: 16,
                         ),

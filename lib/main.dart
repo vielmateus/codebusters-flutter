@@ -24,9 +24,20 @@ import 'package:flutter_hackaton/app/core/ui/screens/adult/home/home_page.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/safe/safe_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/objectives/activities_child_page.dart';
+
 import 'package:flutter_hackaton/app/core/ui/screens/adult/objectives/select_child_monitoring.dart';
 
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+
   runApp(const MyApp());
 }
 
@@ -49,13 +60,13 @@ class MyApp extends StatelessWidget {
         '/registerAdultPage': (context) => RegisterAdultPage(),
         '/registerChildPage': (context) => const RegisterChildPage(),
         '/profileAdultPage': (context) => const ProfileAdultPage(),
-        '/profileChildPage': (context) => const ProfileChildPage(), //Ainda não é chamada
+        '/profileChildPage': (context) => const ProfileChildPage(),
         '/walletPage': (context) => const WalletPage(),
         '/sucessRecharge': (context) => const SucessRecharge(),
         '/extractValueCartPage': (context) => const ExtractValueCartPage(),
         '/monitoringDataPage': (context) => const MonitoringDataPage(),
         '/editActivitiesPage': (context) => const EditActivitiesPage(),
-        '/newActivitePage': (context) => const NewActivitePage(),
+        '/newActivitePage': (context) => NewActivitePage(),
         '/payRewardPage': (context) => const PayRewardPage(),
         '/extractValueChildPage': (context) => const ExtractValueChildPage(),
         '/goalsChildPage': (context) => const GoalsChildPage(),
@@ -68,8 +79,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: AnimatedSplashScreen.withScreenFunction(
         splashTransition: SplashTransition.sizeTransition,
-        backgroundColor: UiConfig.colorScheme.primary,    
-        
+        backgroundColor: UiConfig.colorScheme.primary,
+
         //duration: 3000,
         splash: Image(
           image: const AssetImage('assets/images/logo.png'),
@@ -78,7 +89,7 @@ class MyApp extends StatelessWidget {
         screenFunction: () async {
           await Environments.loadEnvs();
           return const AgeGroupPage();
-        } ,
+        },
         // nextScreen: const AgeGroupPage(),
       ),
     );
