@@ -75,6 +75,7 @@ class MyApp extends StatelessWidget {
         '/activitiesChild': (context) => const ActivitiesChildPage(),
         '/selectChildMonitoring': (context) => const SelectChildMonitoring(),
         '/registerChildMonitoring': (context) => const RegisterChildMonitoring(),
+        'selectChildMonitoring': (context) => const SelectChildMonitoring(),
       },
       debugShowCheckedModeBanner: false,
       home: AnimatedSplashScreen.withScreenFunction(

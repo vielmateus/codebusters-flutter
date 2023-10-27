@@ -26,6 +26,7 @@ class SelectChildMonitoring extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
+                  // Navegar para a rota desejada quando o container for clicado
                   Navigator.of(context).pushNamed('/monitoringDataPage');
                 },
                 child: Container(
@@ -50,7 +51,7 @@ class SelectChildMonitoring extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Carlos Eduardo',
+                                'Calos Eduardo',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 26,
