@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hackaton/app/core/data/adult/store/adult_store.dart';
+import 'package:flutter_hackaton/app/core/local_storage/shared_preferences/shared_preferences.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/button_color_dark.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/text_field_outline.dart';
@@ -12,7 +13,11 @@ class RegisterAdultPage extends StatelessWidget {
   RegisterAdultPage({super.key}) {
     adultStore = AdultStore();
   }
-  void _save(BuildContext context) {
+  Future<void> _save(BuildContext context) async {
+    await SharedPreferencesLocal().write('userM', 'vielmateus@gmail.com');
+    await SharedPreferencesLocal().write('userJ', 'joaorafarinha@gmail.com');
+    await SharedPreferencesLocal().write('password', '123456');
+
     Navigator.of(context).pushNamed('/homePage');
     // adultStore.save().then((value) => Navigator.of(context)
     //     .pushNamedAndRemoveUntil('/homePage', (route) => false));
