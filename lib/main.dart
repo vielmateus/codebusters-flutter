@@ -1,6 +1,7 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hackaton/app/core/helpers/environments.dart';
+import 'package:flutter_hackaton/app/core/local_storage/shared_preferences/shared_preferences.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/adult/login/login_adult_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/adult/login/profile_adult_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/adult/login/register_adult_page.dart';
@@ -36,7 +37,6 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-
   runApp(const MyApp());
 }
 
@@ -44,6 +44,15 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
+    var loggado = '';
+
+    void returnLoginPassword() async {
+      loggado = await SharedPreferencesLocal().read('log');
+    }
+
+    returnLoginPassword();
+    returnLoginPassword();
+
     return MaterialApp(
       title: UiConfig.title,
       theme: ThemeData(
@@ -52,7 +61,6 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/ageGroupPage': (context) => const AgeGroupPage(),
-
         '/homePage': (context) => const HomePage(),
         '/loginAdultPage': (context) => const LoginAdultPage(),
         '/registerAdultPage': (context) => RegisterAdultPage(),
@@ -64,7 +72,6 @@ class MyApp extends StatelessWidget {
         '/editActivitiesPage': (context) => const EditActivitiesPage(),
         '/newActivitePage': (context) => NewActivitePage(),
         '/payRewardPage': (context) => const PayRewardPage(),
-        
         '/safeChildPage': (context) => const SafeChildPage(),
         '/piggyBankChildPage': (context) => const PiggyBankChildPage(),
         '/loginChildPage': (context) => LoginChildPage(),
@@ -75,8 +82,8 @@ class MyApp extends StatelessWidget {
         '/goalsChildPage': (context) => const GoalsChildPage(),
         '/activitiesChild': (context) => const ActivitiesChildPage(),
         '/selectChildMonitoring': (context) => const SelectChildMonitoring(),
-        '/registerChildMonitoring': (context) => const RegisterChildMonitoring(),
-        
+        '/registerChildMonitoring': (context) =>
+            const RegisterChildMonitoring(),
       },
       debugShowCheckedModeBanner: false,
       home: AnimatedSplashScreen.withScreenFunction(
@@ -90,6 +97,14 @@ class MyApp extends StatelessWidget {
         ),
         screenFunction: () async {
           await Environments.loadEnvs();
+
+          if (loggado == 'adulto') {
+            return const HomePage();
+          }
+          if (loggado == 'crianca') {
+            return const HomePageChild();
+          }
+
           return const AgeGroupPage();
         },
         // nextScreen: const AgeGroupPage(),

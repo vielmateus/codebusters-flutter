@@ -10,12 +10,21 @@ class LoginChildPage extends StatelessWidget {
   LoginChildPage({super.key});
 
   final formKey = GlobalKey<FormState>();
-  TextEditingController user = TextEditingController();
-  TextEditingController password = TextEditingController();
-
-
   @override
   Widget build(BuildContext context) {
+    
+    TextEditingController userTE = TextEditingController();
+    TextEditingController passwordTE = TextEditingController();
+
+    void returnLoginPassword() async {
+      userTE.text = await SharedPreferencesLocal().read('user');
+      print(await SharedPreferencesLocal().read('user'));
+      passwordTE.text = await SharedPreferencesLocal().read('password');
+      print(await SharedPreferencesLocal().read('password'));
+    }
+
+    returnLoginPassword();
+
     return Scaffold(
       backgroundColor: UiConfig.colorScheme.primary,
       appBar: AppBar(
@@ -65,7 +74,6 @@ class LoginChildPage extends StatelessWidget {
                           ),
                         ],
                       ),
-
                       SingleChildScrollView(
                         child: Column(children: [
                           const Text(
@@ -81,12 +89,12 @@ class LoginChildPage extends StatelessWidget {
                           ),
                           TextFieldOutline(
                               label: 'Usuário',
-                              control: user,
+                              control: userTE,
                               validatorless:
                                   Validatorless.required('Informe o usuário.')),
                           TextFieldOutline(
                               label: 'Senha',
-                              control: password,
+                              control: passwordTE,
                               validatorless:
                                   Validatorless.required('Informa a senha.')),
                           const SizedBox(
@@ -107,8 +115,18 @@ class LoginChildPage extends StatelessWidget {
 
                                     if ('mateus' == 'mateus' &&
                                         'password' == 'password') {
+                                      await SharedPreferencesLocal()
+                                          .write('log', 'crianca');
+
                                       Navigator.of(context)
                                           .pushNamed('/homePageChild');
+                                    } else {
+                                      const snackBar = SnackBar(
+                                        content: Text(
+                                            'Usuário ou senha incorretos.'),
+                                      );
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(snackBar);
                                     }
                                   }
                                 },
@@ -125,7 +143,7 @@ class LoginChildPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                 ),
+                ),
               ),
             )
           ],

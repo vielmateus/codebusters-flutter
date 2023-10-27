@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hackaton/app/core/local_storage/shared_preferences/shared_preferences.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_child_icon.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/card_icon.dart';
@@ -67,7 +68,8 @@ class HomePageChild extends StatelessWidget {
               ),
               CardIcon(label: 'Sair',
                   dirImage: 'assets/icons/icon_logout.png',
-                  onPressed: () {
+                  onPressed: () async {
+                    await SharedPreferencesLocal().write('log', '');
                     Navigator.pushNamed(context, '/ageGroupPage');
                 }
               ),

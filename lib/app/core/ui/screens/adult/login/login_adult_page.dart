@@ -10,14 +10,13 @@ class LoginAdultPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var user = '';
-    var password = '';
+
     TextEditingController userTE = TextEditingController();
     TextEditingController passwordTE = TextEditingController();
 
-    void returnLoginPassword() async {     
+    void returnLoginPassword() async {
       userTE.text = await SharedPreferencesLocal().read('user');
-      print(await SharedPreferencesLocal().read('user'));      
+      print(await SharedPreferencesLocal().read('user'));
       passwordTE.text = await SharedPreferencesLocal().read('password');
       print(await SharedPreferencesLocal().read('password'));
     }
@@ -82,8 +81,14 @@ class LoginAdultPage extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    TextFieldOutline(label: 'Usuário', control: userTE,),
-                    TextFieldOutline(label: 'Senha', control: passwordTE,),
+                    TextFieldOutline(
+                      label: 'Usuário',
+                      control: userTE,
+                    ),
+                    TextFieldOutline(
+                      label: 'Senha',
+                      control: passwordTE,
+                    ),
                     const SizedBox(
                       height: 15,
                     ),
@@ -100,6 +105,8 @@ class LoginAdultPage extends StatelessWidget {
 
                             if ((user == 'adulto@gmail.com') &&
                                 (password == '123456')) {
+                              await SharedPreferencesLocal()
+                                  .write('log', 'adulto');
                               Navigator.pushNamed(context, '/homePage');
                             } else {
                               const snackBar = SnackBar(
