@@ -118,9 +118,9 @@ class _GoalsChildPageState extends State<GoalsChildPage> {
                     animation: true,
                     lineHeight: 25.0,
                     animationDuration: 2500,
-                    percent: 0.5,
+                    percent: 0.55,
                     center: Text(
-                      "50.0%",
+                      "55.0%",
                       style: TextStyle(
                           color: UiConfig.colorScheme.surface,
                           fontWeight: FontWeight.bold),
@@ -154,9 +154,9 @@ class _GoalsChildPageState extends State<GoalsChildPage> {
                     animation: true,
                     lineHeight: 25.0,
                     animationDuration: 2500,
-                    percent: 0.1,
+                    percent: 0.65,
                     center: Text(
-                      "1.0%",
+                      "65.0%",
                       style: TextStyle(
                           color: UiConfig.colorScheme.surface,
                           fontWeight: FontWeight.bold),
