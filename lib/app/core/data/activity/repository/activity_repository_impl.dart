@@ -7,9 +7,21 @@ class ActivityRepositoryImpl implements IActivityRepository {
   static String tableName = "activitys";
 
   @override
-  Future<List<ActivityModel>> getAll() {
-    // TODO: implement getAll
-    throw UnimplementedError();
+  Future<List<ActivityModel>> getAll() async {
+    QuerySnapshot querySnapshot =
+        await FirebaseFirestore.instance.collection(tableName).get();
+
+    if (querySnapshot.docs.isEmpty) {
+      return [];
+    } else {
+      List<ActivityModel> list = [];
+
+      for (var element in querySnapshot.docs) {
+        list.add(ActivityModel.fromMap(
+            element.data() as Map<String, dynamic>, element.id));
+      }
+      return list;
+    }
   }
 
   @override
@@ -23,6 +35,6 @@ class ActivityRepositoryImpl implements IActivityRepository {
      await FirebaseFirestore.instance
         .collection(tableName)
         .add(activity.toMap());
-
+      
   }
 }

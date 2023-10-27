@@ -38,11 +38,9 @@ class SelectChildMonitoring extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 16),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Image.asset('assets/images/monitoring_child_exemple.png'),
-                        const SizedBox(
-                          width: 60,
-                        ),
                         Padding(
                           padding: const EdgeInsets.all(22.0),
                           child: Column(

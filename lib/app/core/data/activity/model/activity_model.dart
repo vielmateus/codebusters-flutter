@@ -2,11 +2,13 @@
 import 'dart:convert';
 
 class ActivityModel {
+  String? id;
   String activity;
   double values;
   DateTime date;
 
   ActivityModel({
+    this.id,
     required this.activity,
     required this.values,
     required this.date,
@@ -14,14 +16,16 @@ class ActivityModel {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
+      'id': id,
       'activity': activity,
       'values': values,
       'date': date.millisecondsSinceEpoch,
     };
   }
 
-  factory ActivityModel.fromMap(Map<String, dynamic> map) {
+  factory ActivityModel.fromMap(Map<String, dynamic> map, String pId) {
     return ActivityModel(
+      id: pId,
       activity: map['activity'] as String,
       values: map['values'] as double,
       date: DateTime.fromMillisecondsSinceEpoch(map['date'] as int),
@@ -29,7 +33,4 @@ class ActivityModel {
   }
 
   String toJson() => json.encode(toMap());
-
-  factory ActivityModel.fromJson(String source) =>
-      ActivityModel.fromMap(json.decode(source) as Map<String, dynamic>);
 }

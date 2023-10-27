@@ -25,6 +25,7 @@ class NewActivitePage extends StatelessWidget {
           bottomNavigationBar: const BottonNavigationBarIcon(),
           appBar: AppBar(
             title: const Text('Nova Atividade'),
+          ),
           body: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.all(12.0),
@@ -74,6 +75,7 @@ class NewActivitePage extends StatelessWidget {
                       onPressed: () async {
                         if (formKey.currentState!.validate()) {
                           await activityStore.save();
+                          Navigator.of(context).pop;
                         }
                       })
                 ],
