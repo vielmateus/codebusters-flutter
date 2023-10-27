@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_icon.dart';
 
-class SucessRecharge extends StatefulWidget {
-  const SucessRecharge({super.key});
+class SucessAdultRecharge extends StatefulWidget {
+  const SucessAdultRecharge({super.key});
 
   @override
-  State<SucessRecharge> createState() => _SucessRechargeState();
+  State<SucessAdultRecharge> createState() => _SucessAdultRechargeState();
 }
 
-class _SucessRechargeState extends State<SucessRecharge> {
+class _SucessAdultRechargeState extends State<SucessAdultRecharge> {
   @override
   void initState() {
     super.initState();

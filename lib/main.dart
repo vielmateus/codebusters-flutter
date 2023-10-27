@@ -10,7 +10,7 @@ import 'package:flutter_hackaton/app/core/ui/screens/adult/objectives/edit_activ
 import 'package:flutter_hackaton/app/core/ui/screens/adult/objectives/monitoring_data_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/adult/objectives/new_activite_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/adult/objectives/register_child_monitoring.dart';
-import 'package:flutter_hackaton/app/core/ui/screens/adult/wallet/sucess_recharge.dart';
+import 'package:flutter_hackaton/app/core/ui/screens/adult/wallet/sucess_adult_recharge.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/adult/wallet/wallet_adult_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/age_group_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/extract/extract_value_child_page.dart';
@@ -58,14 +58,14 @@ class MyApp extends StatelessWidget {
         '/registerAdultPage': (context) => RegisterAdultPage(),
         '/profileAdultPage': (context) => const ProfileAdultPage(),
         '/walletAdultPage': (context) => const WalletAdultPage(),
-        '/sucessRecharge': (context) => const SucessRecharge(),
+        '/sucessAdultRecharge': (context) => const SucessAdultRecharge(),
         '/extractValueCartPage': (context) => const ExtractValueCartPage(),
         '/monitoringDataPage': (context) => const MonitoringDataPage(),
         '/editActivitiesPage': (context) => const EditActivitiesPage(),
         '/newActivitePage': (context) => NewActivitePage(),
         '/payRewardPage': (context) => const PayRewardPage(),
         
-        '/safePage': (context) => const SafeChildPage(),
+        '/safeChildPage': (context) => const SafeChildPage(),
         '/piggyBankChildPage': (context) => const PiggyBankChildPage(),
         '/loginChildPage': (context) => LoginChildPage(),
         '/registerChildPage': (context) => const RegisterChildPage(),
