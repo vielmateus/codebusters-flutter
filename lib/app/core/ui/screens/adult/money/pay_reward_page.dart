@@ -87,7 +87,10 @@ class PayRewardPage extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 15,),
-            ButtonColorBright(label: 'Pagar', onPressed: (){}),
+            ButtonColorBright(label: 'Pagar', onPressed: (){
+              Navigator.of(context).pop();
+              showSuccessMessage(context);
+            }),
             const SizedBox(height: 15,),
           ],
         ),
@@ -117,5 +120,42 @@ ListView _listaDados() {
         ),
       );
     },
+  );
+}
+
+void showSuccessMessage(BuildContext context) async {
+  await showDialog(
+    context: context,
+    builder: (contexto) => AlertDialog(
+      backgroundColor: UiConfig.colorScheme.primary,
+      content: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              "Pagamento realizado com sucesso!",
+              style: TextStyle(color: UiConfig.colorScheme.surface),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset('assets/icons/icon_coins_one.png'),
+                const SizedBox(
+                  width: 10,
+                ),
+                Image.asset('assets/icons/icon_check.png'),
+                const SizedBox(
+                  width: 10,
+                ),
+                Image.asset('assets/icons/icon_coins_two.png'),
+              ],
+            )
+          ],
+        ),
+      ),
+    ),
   );
 }

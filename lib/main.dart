@@ -23,6 +23,7 @@ import 'package:flutter_hackaton/app/core/ui/screens/adult/home/home_page.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/safe/safe_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/child/objectives/activities_child_page.dart';
+import 'package:flutter_hackaton/app/core/ui/screens/adult/objectives/select_child_monitoring.dart';
 
 void main() {
   runApp(const MyApp());
@@ -60,6 +61,7 @@ class MyApp extends StatelessWidget {
         '/safePage': (context) => const SafePage(),
         '/piggyBankPage': (context) => const PiggyBankPage(),
         '/activitiesChild': (context) => const ActivitiesChildPage(),
+        '/selectChildMonitoring': (context) => const SelectChildMonitoring(),
       },
       debugShowCheckedModeBanner: false,
       home: AnimatedSplashScreen.withScreenFunction(

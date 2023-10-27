@@ -113,7 +113,7 @@ class WalletPage extends StatelessWidget {
                   showModalBottomSheet(
                     context: context,
                     builder: (BuildContext context) {
-                      return AddValueScreen(
+                      return ConvertCoinScreen(
                         onTap: () {
                           Navigator.of(context).pop();
                           showSuccessMessage(context);
@@ -208,14 +208,16 @@ class ConvertCoinScreen extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          const TextFieldOutlineNumber(
-              label: 'Quantos reais equivalem uma moeda?'),
+          const TextFieldOutlineNumber(label: 'Quantos reais equivalem uma moeda?'),
           Padding(
             padding: const EdgeInsets.only(right: 16),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                ButtonColorBright(label: 'Salvar', onPressed: onTap),
+                ButtonColorBright(
+                    label: 'Salvar',
+                    onPressed: onTap,
+                ),
               ],
             ),
           )
