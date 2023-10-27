@@ -42,12 +42,12 @@ class MyApp extends StatelessWidget {
         '/homePage': (context) => const HomePage(),
         '/homePageChild': (context) => const HomePageChild(),
         '/ageGroupPage': (context) => const AgeGroupPage(),
-        '/loginChildPage': (context) => const LoginChildPage(),
+        '/loginChildPage': (context) => LoginChildPage(),
         '/loginAdultPage': (context) => const LoginAdultPage(),
         '/registerAdultPage': (context) => RegisterAdultPage(),
         '/registerChildPage': (context) => const RegisterChildPage(),
         '/profileAdultPage': (context) => const ProfileAdultPage(),
-        '/profileChildPage': (context) => const ProfileChildPage(), //Ainda não é chamada
+        '/profileChildPage': (context) => const ProfileChildPage(), 
         '/walletPage': (context) => const WalletPage(),
         '/sucessRecharge': (context) => const SucessRecharge(),
         '/extractValueCartPage': (context) => const ExtractValueCartPage(),
@@ -64,8 +64,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: AnimatedSplashScreen.withScreenFunction(
         splashTransition: SplashTransition.sizeTransition,
-        backgroundColor: UiConfig.colorScheme.primary,    
-        
+        backgroundColor: UiConfig.colorScheme.primary,
+
         //duration: 3000,
         splash: Image(
           image: const AssetImage('assets/images/logo.png'),
@@ -74,7 +74,7 @@ class MyApp extends StatelessWidget {
         screenFunction: () async {
           await Environments.loadEnvs();
           return const AgeGroupPage();
-        } ,
+        },
         // nextScreen: const AgeGroupPage(),
       ),
     );
