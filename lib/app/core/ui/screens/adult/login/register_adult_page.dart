@@ -14,8 +14,7 @@ class RegisterAdultPage extends StatelessWidget {
     adultStore = AdultStore();
   }
   Future<void> _save(BuildContext context) async {
-    await SharedPreferencesLocal().write('userM', 'vielmateus@gmail.com');
-    await SharedPreferencesLocal().write('userJ', 'joaorafarinha@gmail.com');
+    await SharedPreferencesLocal().write('user', 'adulto@gmail.com');
     await SharedPreferencesLocal().write('password', '123456');
 
     Navigator.of(context).pushNamed('/homePage');
@@ -24,10 +23,10 @@ class RegisterAdultPage extends StatelessWidget {
   }
 
   final formKey = GlobalKey<FormState>();
-  TextEditingController nome = TextEditingController();
-  TextEditingController email = TextEditingController();
-  TextEditingController senha = TextEditingController();
-  TextEditingController cpf = TextEditingController();
+  TextEditingController nomeTE = TextEditingController();
+  TextEditingController emailTE = TextEditingController();
+  TextEditingController senhaTE = TextEditingController();
+  TextEditingController cpfTE = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +51,7 @@ class RegisterAdultPage extends StatelessWidget {
               const SizedBox(height: 20),
               TextFieldOutline(
                 label: 'Nome:',
-                control: nome,
+                control: nomeTE,
                 onTap: (value) => adultStore.setNome(value),
                 validatorless:
                     Validatorless.required('O campo nome é obrigatório'),
@@ -60,7 +59,7 @@ class RegisterAdultPage extends StatelessWidget {
               const SizedBox(height: 5),
               TextFieldOutline(
                 label: 'Email:',
-                control: email,
+                control: emailTE,
                 onTap: (value) => adultStore.setEmail(value),
                 validatorless: Validatorless.multiple([
                   Validatorless.required('O email é obrigatório'),
@@ -70,7 +69,7 @@ class RegisterAdultPage extends StatelessWidget {
               const SizedBox(height: 5),
               TextFieldOutline(
                 label: 'Senha:',
-                control: senha,
+                control: senhaTE,
                 validatorless: Validatorless.multiple([
                   Validatorless.required('É obrigatório informar a senha.'),
                   Validatorless.min(
@@ -83,13 +82,13 @@ class RegisterAdultPage extends StatelessWidget {
                   label: 'Confirmar Senha:',
                   validatorless: Validatorless.multiple([
                     Validatorless.compare(
-                        senha, 'Senha e confirma senha devem ser iguais.'),
+                        senhaTE, 'Senha e confirma senha devem ser iguais.'),
                     Validatorless.required('É obrigatório confirmar a senha.')
                   ])),
               const SizedBox(height: 5),
               TextFieldOutline(
                 label: 'CPF:',
-                control: cpf,
+                control: cpfTE,
                 onTap: (value) => adultStore.setCPF(value),
                 validatorless: Validatorless.multiple([
                   Validatorless.required('O CPF é obrigatório'),

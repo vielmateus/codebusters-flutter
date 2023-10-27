@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_icon.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/button_color_bright.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/text_field_outline.dart';
@@ -9,6 +8,16 @@ class ProfileAdultPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController name = TextEditingController();
+    TextEditingController cpf = TextEditingController();
+    TextEditingController email = TextEditingController();
+    TextEditingController password = TextEditingController();
+
+    name.text = 'Pedro da Silva';
+    email.text = 'adulto@gmail.com';
+    cpf.text = '123.456.789-01';
+    password.text = '123456';
+
     return Scaffold(
       appBar: AppBar(title: const Text('Perfil')),
       bottomNavigationBar: const BottonNavigationBarIcon(),
@@ -36,15 +45,15 @@ class ProfileAdultPage extends StatelessWidget {
               // const SizedBox(
               //   height: 30,
               // ),
-              // Image.asset('assets/images/adult_exemple.png'),
+              Image.asset('assets/images/adult_exemple.png'),
               const SizedBox(
                 height: 20,
               ),
               const SizedBox(height: 20,),
-              TextFieldOutline(label: 'Nome:'),
-              TextFieldOutline(label: 'CPF:'),
-              TextFieldOutline(label: 'Email:'),
-              TextFieldOutline(label: 'Senha:'),
+              TextFieldOutline(label: 'Nome:', control: name),
+              TextFieldOutline(label: 'CPF:', control: cpf,),
+              TextFieldOutline(label: 'Email:', control: email,),
+              TextFieldOutline(label: 'Senha:', control: password,),
               const SizedBox(height: 20,),
               ButtonColorBright(label: 'Salvar', onPressed: (){}),
             ],

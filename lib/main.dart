@@ -61,7 +61,7 @@ class MyApp extends StatelessWidget {
         '/extractValueCartPage': (context) => const ExtractValueCartPage(),
         '/monitoringDataPage': (context) => const MonitoringDataPage(),
         '/editActivitiesPage': (context) => const EditActivitiesPage(),
-        '/newActivitePage': (context) => const NewActivitePage(),
+        '/newActivitePage': (context) => NewActivitePage(),
         '/payRewardPage': (context) => const PayRewardPage(),
         '/extractValueChildPage': (context) => const ExtractValueChildPage(),
         '/goalsChildPage': (context) => const GoalsChildPage(),

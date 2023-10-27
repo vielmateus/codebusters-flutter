@@ -79,21 +79,18 @@ class LoginAdultPage extends StatelessWidget {
                         ButtonColorDark(
                           label: 'Entrar',
                           onPressed: () async {
-                            var userM =
-                                await SharedPreferencesLocal().read('userM');
-                            var userJ =
-                                await SharedPreferencesLocal().read('userJ');
+                            var user =
+                                await SharedPreferencesLocal().read('user');
                             var password =
                                 await SharedPreferencesLocal().read('password');
 
-                            if ((userM == 'vielmateus@gmail.com' ||
-                                    userJ == 'joaorafarinha@gmail.com') &&
+                            if ((user == 'adulto@gmail.com') &&
                                 (password == '123456')) {
                               Navigator.pushNamed(context, '/homePage');
                             } else {
-                              final snackBar = SnackBar(
+                              const snackBar = SnackBar(
                                 content:
-                                    const Text('Usuário ou senha incorretos.'),
+                                    Text('Usuário ou senha incorretos.'),
                               );
 
                               ScaffoldMessenger.of(context)
