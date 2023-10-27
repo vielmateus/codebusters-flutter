@@ -1,5 +1,6 @@
 import 'package:flutter_hackaton/app/core/data/activity/model/activity_model.dart';
-import 'package:flutter_hackaton/app/core/data/activity/service/adult_service.dart';
+import 'package:flutter_hackaton/app/core/data/activity/service/activity_service.dart';
+
 import 'package:mobx/mobx.dart';
 part 'activity_store.g.dart';
 

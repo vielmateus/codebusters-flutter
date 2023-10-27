@@ -4,6 +4,5 @@ abstract class IExtractItemRepository {
 
   Future<ExtractItemModel?> getOneByApi(int id);
 
-  Future<List<ExtractItemModel>> getAllByApi();
-  
+  Future<List<ExtractItemModel>> getAllByApi();  
 }

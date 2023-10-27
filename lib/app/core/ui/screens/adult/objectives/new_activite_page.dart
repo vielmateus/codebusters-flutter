@@ -75,6 +75,7 @@ class NewActivitePage extends StatelessWidget {
                       onPressed: () async {
                         if (formKey.currentState!.validate()) {
                           await activityStore.save();
+                          Navigator.of(context).pop;
                         }
                       })
                 ],

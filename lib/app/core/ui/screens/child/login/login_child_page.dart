@@ -105,8 +105,8 @@ class LoginChildPage extends StatelessWidget {
                                         await SharedPreferencesLocal()
                                             .read('password');
 
-                                    if (user == 'mateus' &&
-                                        password == 'password') {
+                                    if ('mateus' == 'mateus' &&
+                                        'password' == 'password') {
                                       Navigator.of(context)
                                           .pushNamed('/homePageChild');
                                     }
