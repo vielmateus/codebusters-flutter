@@ -5,7 +5,7 @@ import 'package:flutter_hackaton/app/core/ui/widgets/text_field_outline.dart';
 
 class LoginChildPage extends StatelessWidget {
 
-  const LoginChildPage({ super.key });
+  LoginChildPage({ super.key});
 
   @override
    Widget build(BuildContext context) {
@@ -78,7 +78,9 @@ class LoginChildPage extends StatelessWidget {
                         ButtonColorDark(
                           label: 'Entrar',
                           onPressed: () {
+
                             Navigator.of(context).pushNamed('/homePageChild');
+
                           },
                         ),
                       ],
