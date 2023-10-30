@@ -37,7 +37,6 @@ class EditActivitiesPage extends StatelessWidget {
             () => Navigator.of(context).pushNamed('/newActivitePage'),
             () {
               showAlertDialog(context, () {
-                print('Confirmou');
               });
             },
           )),

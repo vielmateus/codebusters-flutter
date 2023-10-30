@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_icon.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/button_color_bright.dart';
-import 'package:flutter_hackaton/app/core/ui/widgets/show_message_custom.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/text_field_outline.dart';
 
 class NewGoalsAdultPage extends StatelessWidget {

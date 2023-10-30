@@ -10,7 +10,7 @@ class BottonNavigationBarIcon extends StatelessWidget {
     return ConvexAppBar(
       onTap: (int i) {
         if (i == 0) {
-          Navigator.of(context).pushNamed('/walletAdultPage');
+          Navigator.of(context).pushNamed('/goalsAdultPage');
         }
         if (i == 1) {
           Navigator.of(context).pushNamed('/activitiesChild');
@@ -22,7 +22,7 @@ class BottonNavigationBarIcon extends StatelessWidget {
           Navigator.of(context).pushNamed('/profileAdultPage');
         }
         if (i == 4) {
-          Navigator.of(context).pushNamed('/piggyBankPage');
+          Navigator.of(context).pushNamed('/walletAdultPage');
         }
       },
       style: TabStyle.fixedCircle,
@@ -32,11 +32,11 @@ class BottonNavigationBarIcon extends StatelessWidget {
       color: UiConfig.colorScheme.onPrimary,
       backgroundColor: UiConfig.colorScheme.onPrimary,
       items: [
-        TabItem(icon: Image.asset('assets/icons/icon_wallet.png')),
+        TabItem(icon: Image.asset('assets/icons/icon_dart.png')),
         TabItem(icon: Image.asset('assets/icons/icon_graphic.png')),
         TabItem(icon: Image.asset('assets/icons/icon_home.png')),
         TabItem(icon: Image.asset('assets/icons/icon_person.png')),
-        TabItem(icon: Image.asset('assets/icons/icon_hand_money.png')),
+        TabItem(icon: Image.asset('assets/icons/icon_wallet.png')),
       ],
     );
   }
