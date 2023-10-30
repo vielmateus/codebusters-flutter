@@ -56,6 +56,7 @@ class EditActivitiesPage extends StatelessWidget {
               ButtonColorBright(
                 label: 'Salvar',
                 onPressed: () {
+                  Navigator.of(context).pop();
                   showSuccessMessage(context);
                 },
               ),

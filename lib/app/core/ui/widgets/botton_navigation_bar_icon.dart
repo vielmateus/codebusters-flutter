@@ -10,7 +10,7 @@ class BottonNavigationBarIcon extends StatelessWidget {
     return ConvexAppBar(
       onTap: (int i) {
         if (i == 0) {
-          Navigator.of(context).pushNamed('/goalsChildPage');
+          Navigator.of(context).pushNamed('/walletAdultPage');
         }
         if (i == 1) {
           Navigator.of(context).pushNamed('/activitiesChild');

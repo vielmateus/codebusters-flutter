@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hackaton/app/core/data/money/service/extract_item_service.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
-import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_child_icon.dart';
+import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_icon.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/button_color_bright.dart';
 
-class PiggyBankChildPage extends StatelessWidget {
-  const PiggyBankChildPage({super.key});
+class PiggyBankPage extends StatelessWidget {
+  const PiggyBankPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class PiggyBankChildPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(''),
       ),
-      bottomNavigationBar: const BottonNavigationBarChildIcon(),
+      bottomNavigationBar: const BottonNavigationBarIcon(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

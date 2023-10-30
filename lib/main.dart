@@ -7,7 +7,9 @@ import 'package:flutter_hackaton/app/core/ui/screens/adult/login/profile_adult_p
 import 'package:flutter_hackaton/app/core/ui/screens/adult/login/register_adult_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/adult/money/extract_value_cart_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/adult/money/pay_reward_page.dart';
+import 'package:flutter_hackaton/app/core/ui/screens/adult/objectives/goals/goals_adult_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/adult/objectives/edit_activities_page.dart';
+import 'package:flutter_hackaton/app/core/ui/screens/adult/objectives/goals/new_goals_adult_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/adult/objectives/monitoring_data_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/adult/objectives/new_activite_page.dart';
 import 'package:flutter_hackaton/app/core/ui/screens/adult/objectives/register_child_monitoring.dart';
@@ -82,8 +84,9 @@ class MyApp extends StatelessWidget {
         '/goalsChildPage': (context) => const GoalsChildPage(),
         '/activitiesChild': (context) => const ActivitiesChildPage(),
         '/selectChildMonitoring': (context) => const SelectChildMonitoring(),
-        '/registerChildMonitoring': (context) =>
-            const RegisterChildMonitoring(),
+        '/registerChildMonitoring': (context) => const RegisterChildMonitoring(),
+        '/goalsAdultPage': (context) => const GoalsAdultPage(),
+        'newGoalsAdultPage': (context) => NewGoalsAdultPage(),
       },
       debugShowCheckedModeBanner: false,
       home: AnimatedSplashScreen.withScreenFunction(

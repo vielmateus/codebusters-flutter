@@ -18,15 +18,6 @@ class MonitoringDataPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Image.asset('assets/icons/icon_monitoring.png'),
-            // Text(
-            //   'Monitoramento',
-            //   style: TextStyle(
-            //     fontSize: 22,
-            //     fontWeight: FontWeight.bold,
-            //     color: UiConfig.colorScheme.secondary,
-            //   ),
-            // ),
             const SizedBox(
               height: 80,
             ),
@@ -47,6 +38,15 @@ class MonitoringDataPage extends StatelessWidget {
             const SizedBox(
               height: 80,
             ),
+
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: ButtonColorBright(
+                  label: 'Metas',
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/goalsAdultPage');
+                  }),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -58,7 +58,12 @@ class MonitoringDataPage extends StatelessWidget {
                 const SizedBox(
                   width: 10,
                 ),
+
+                const SizedBox(
+                  width: 10,
+                ),
                 ButtonColorBright(label: 'Acessar Conta', onPressed: () {}),
+
               ],
             ),
             const SizedBox(

@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hackaton/app/core/data/activity/store/activity_store.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_icon.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/button_color_bright.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/text_field_outline.dart';
 
-class NewActivitePage extends StatelessWidget {
-  late ActivityStore activityStore;
+class NewGoalsAdultPage extends StatelessWidget {
+  late NewGoalsAdultPage activityStore;
 
-  NewActivitePage({super.key}) {
-    activityStore = ActivityStore();
+  NewGoalsAdultPage({super.key}) {
+    activityStore = NewGoalsAdultPage();
   }
 
   final formKey = GlobalKey<FormState>();
@@ -24,7 +23,7 @@ class NewActivitePage extends StatelessWidget {
       child: Scaffold(
           bottomNavigationBar: const BottonNavigationBarIcon(),
           appBar: AppBar(
-            title: const Text('Nova Atividade'),
+            title: const Text('Metas'),
           ),
           body: SingleChildScrollView(
             child: Padding(
@@ -35,12 +34,12 @@ class NewActivitePage extends StatelessWidget {
                   const SizedBox(
                     height: 40,
                   ),
-                  Image.asset('assets/icons/icon_activities.png'),
+                  Image.asset('assets/images/image_goals.png'),
                   const SizedBox(
                     height: 20,
                   ),
                   Text(
-                    'Criar ou Editar Atividades',
+                    'Criar Nova Meta',
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
@@ -52,20 +51,12 @@ class NewActivitePage extends StatelessWidget {
                   ),
                   TextFieldOutline(
                     label: 'Atividade',
-                    control: activityTE,
-                    onTap: (value) => activityStore.setActivity(value),
                   ),
                   TextFieldOutline(
                     label: 'Valor',
-                    control: valuesTE,
-                    onTap: (value) =>
-                        activityStore.setValues(double.parse(value)),
                   ),
                   TextFieldOutline(
                     label: 'Data',
-                    control: dateTE,
-                    onTap: (value) =>
-                        activityStore.setDate(DateTime.parse(value)),
                   ),
                   const SizedBox(
                     height: 50,
@@ -73,17 +64,15 @@ class NewActivitePage extends StatelessWidget {
                   ButtonColorBright(
                       label: 'Salvar',
                       onPressed: () async {
-                        if (formKey.currentState!.validate()) {
-                          await activityStore.save();
                           Navigator.of(context).pop();
                           showSuccessMessage(context);
-                      }
-                    }
-                  )
-                ],
-              ),
+                  }
+                )
+              ],
             ),
-          )),
+          ),
+        )
+      ),
     );
   }
 }
