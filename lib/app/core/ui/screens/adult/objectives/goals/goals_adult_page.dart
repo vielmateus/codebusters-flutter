@@ -169,8 +169,9 @@ class _GoalsAdultPageState extends State<GoalsAdultPage> {
                     height: 60,
                   ),
                   ButtonColorBright(label: 'Nova Meta', onPressed: () {
-                    Navigator.of(context).pushNamed('/extractValueChildPage');
-                  }),
+                    Navigator.of(context).pushNamed('/newGoalsAdultPage');
+                    }
+                  ),
                 ],
               ),
             ),

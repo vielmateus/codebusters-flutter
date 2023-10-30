@@ -2,76 +2,62 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_icon.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/button_color_bright.dart';
+import 'package:flutter_hackaton/app/core/ui/widgets/show_message_custom.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/text_field_outline.dart';
 
 class NewGoalsAdultPage extends StatelessWidget {
-  late NewGoalsAdultPage activityStore;
-
-  NewGoalsAdultPage({super.key}) {
-    activityStore = NewGoalsAdultPage();
-  }
-
-  final formKey = GlobalKey<FormState>();
-  TextEditingController activityTE = TextEditingController();
-  TextEditingController valuesTE = TextEditingController();
-  TextEditingController dateTE = TextEditingController();
+  const NewGoalsAdultPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: formKey,
-      child: Scaffold(
-          bottomNavigationBar: const BottonNavigationBarIcon(),
-          appBar: AppBar(
-            title: const Text('Metas'),
+    return Scaffold(
+      bottomNavigationBar: const BottonNavigationBarIcon(),
+      appBar: AppBar(
+        title: const Text('Metas'),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const SizedBox(
+            height: 20,
           ),
-          body: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  Image.asset('assets/images/image_goals.png'),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    'Criar Nova Meta',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                      color: UiConfig.colorScheme.secondary,
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  TextFieldOutline(
-                    label: 'Atividade',
-                  ),
-                  TextFieldOutline(
-                    label: 'Valor',
-                  ),
-                  TextFieldOutline(
-                    label: 'Data',
-                  ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  ButtonColorBright(
-                      label: 'Salvar',
-                      onPressed: () async {
-                          Navigator.of(context).pop();
-                          showSuccessMessage(context);
-                  }
-                )
-              ],
+          Image.asset('assets/images/image_goals.png'),
+          Text(
+            'Criar Novas Metas',
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+              color: UiConfig.colorScheme.secondary,
             ),
           ),
-        )
+
+          const SizedBox(
+            height: 20,
+          ),
+          TextFieldOutline(
+            label: 'Descrição da Nova Meta',
+          ),
+          TextFieldOutline(
+            label: 'Valor Final da meta',
+          ),
+          const SizedBox(
+            height: 90,
+          ),
+
+          Center(
+            child: ButtonColorBright(
+              label: 'Salvar',
+              onPressed: () {
+                Navigator.of(context).pop();
+                showSuccessMessage(context);
+              },
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+        ],
       ),
     );
   }

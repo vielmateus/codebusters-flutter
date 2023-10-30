@@ -86,13 +86,12 @@ class MyApp extends StatelessWidget {
         '/selectChildMonitoring': (context) => const SelectChildMonitoring(),
         '/registerChildMonitoring': (context) => const RegisterChildMonitoring(),
         '/goalsAdultPage': (context) => const GoalsAdultPage(),
-        'newGoalsAdultPage': (context) => NewGoalsAdultPage(),
+        '/newGoalsAdultPage': (context) => NewGoalsAdultPage(),
       },
       debugShowCheckedModeBanner: false,
       home: AnimatedSplashScreen.withScreenFunction(
         splashTransition: SplashTransition.sizeTransition,
         backgroundColor: UiConfig.colorScheme.primary,
-
         //duration: 3000,
         splash: Image(
           image: const AssetImage('assets/images/logo.png'),
