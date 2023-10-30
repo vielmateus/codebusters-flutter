@@ -101,7 +101,7 @@ class _GoalsChildPageState extends State<GoalsChildPage> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
-                        '   Para meu celular:',
+                        '   Para meu PS5:',
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.normal,

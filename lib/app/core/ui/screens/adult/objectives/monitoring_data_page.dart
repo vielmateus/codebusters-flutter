@@ -62,7 +62,9 @@ class MonitoringDataPage extends StatelessWidget {
                 const SizedBox(
                   width: 10,
                 ),
-                ButtonColorBright(label: 'Acessar Conta', onPressed: () {}),
+                ButtonColorBright(label: 'Acessar Conta', onPressed: () {
+                  Navigator.of(context).pushNamed('/homePageChild');
+                }),
 
               ],
             ),

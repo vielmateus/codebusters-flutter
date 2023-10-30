@@ -73,7 +73,7 @@ void showSuccessMessage(BuildContext context) async {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              "Atividades salvas com sucesso!",
+              "Nova atividade salva com sucesso!",
               style: TextStyle(color: UiConfig.colorScheme.surface),
             ),
             const SizedBox(
