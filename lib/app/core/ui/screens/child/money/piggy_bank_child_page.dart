@@ -85,7 +85,7 @@ class _PiggyBankChildPageState extends State<PiggyBankChildPage> {
                     itemCount: 5, // Criar controle a partir da criação de novas metas para utilizar Length
                     itemBuilder: (context, index) {
                       if (index == 0) {
-                        return cardList("Para minha bicicleta", "R\$375,00", "R\$1000,00", index);
+                        return cardList("Para minha bicicleta", "R\$875,00", "R\$1000,00", index);
                       } else if (index == 1) {
                         return cardList("Para meu PS5", "R\$2405,00", "R\$4300,00", index);
                       } else if (index == 2) {
