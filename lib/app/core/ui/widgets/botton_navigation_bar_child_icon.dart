@@ -23,7 +23,7 @@ class BottonNavigationBarChildIcon extends StatelessWidget {
           Navigator.of(context).pushNamed('/profileChildPage');
         }
         if (i == 4) {
-          Navigator.of(context).pushNamed('/piggyBankPage');
+          Navigator.of(context).pushNamed('/safeChildPage');
         }
       },
       style: TabStyle.fixedCircle,

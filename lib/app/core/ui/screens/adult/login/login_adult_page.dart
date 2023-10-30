@@ -113,8 +113,7 @@ class LoginAdultPage extends StatelessWidget {
                                 content: Text('Usuário ou senha incorretos.'),
                               );
 
-                              ScaffoldMessenger.of(context)
-                                  .showSnackBar(snackBar);
+                              ScaffoldMessenger.of(context).showSnackBar(snackBar) ;
                             }
                           },
                         ),

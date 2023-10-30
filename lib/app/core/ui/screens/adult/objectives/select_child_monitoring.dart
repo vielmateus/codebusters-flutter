@@ -49,7 +49,7 @@ class SelectChildMonitoring extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Calos Eduardo',
+                                'Gabriela Fernanda',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 26,

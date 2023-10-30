@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hackaton/app/core/data/money/model/extract_item_model.dart';
 import 'package:flutter_hackaton/app/core/data/money/service/extract_item_service.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
+import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_child_icon.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_icon.dart';
 
 class ActivitiesChildPage extends StatefulWidget {
@@ -19,7 +20,7 @@ class _ActivitiesChildPageState extends State<ActivitiesChildPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const BottonNavigationBarIcon(),
+      bottomNavigationBar: const BottonNavigationBarChildIcon(),
       appBar: AppBar(
         title: const Text('Atividades'),
       ),
@@ -106,13 +107,11 @@ Widget cardItem(
 List<ExtractItemModel> dadosMock() {
   List<ExtractItemModel> listaDeObjetos = [
     ExtractItemModel(
-        dateEvent: "2023-10-27", balance: "Aprender Java", valueTransf: '5.00'),
+        dateEvent: "2023-10-27", balance: "Varrer a casa", valueTransf: '5.00'),
     ExtractItemModel(
-        dateEvent: "2023-10-28", balance: "Estudar Java", valueTransf: '3.50'),
+        dateEvent: "2023-10-28", balance: "lavar a louça", valueTransf: '3.50'),
     ExtractItemModel(
-        dateEvent: "2023-10-28", balance: "API Java", valueTransf: '2.50'),
-    ExtractItemModel(
-        dateEvent: "2023-10-28", balance: "Cumprir Prazo", valueTransf: '2.50'),
+        dateEvent: "2023-10-28", balance: "03:00 horas sem telas", valueTransf: '5.00'),
   ];
   return listaDeObjetos;
 }

@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hackaton/app/core/data/money/service/extract_item_service.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
-import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_icon.dart';
+import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_child_icon.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/button_color_bright.dart';
+import 'package:flutter_hackaton/app/core/ui/widgets/text_field_outline_number.dart';
 
-class PiggyBankChildPage extends StatelessWidget {
+class PiggyBankChildPage extends StatefulWidget {
   const PiggyBankChildPage({super.key});
+
+  @override
+  State<PiggyBankChildPage> createState() => _PiggyBankChildPageState();
+}
+
+class _PiggyBankChildPageState extends State<PiggyBankChildPage> {
+  int selectedCheckBoxIndex = -1; // Índice do CheckBox selecionado, -1 indica nenhum selecionado
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +21,7 @@ class PiggyBankChildPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(''),
       ),
-      bottomNavigationBar: const BottonNavigationBarIcon(),
+      bottomNavigationBar: const BottonNavigationBarChildIcon(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -69,14 +77,21 @@ class PiggyBankChildPage extends StatelessWidget {
                     );
                   }
                   if (!snapshot.hasData) {
-                    const Center(
+                    return Center(
                       child: CircularProgressIndicator(),
                     );
                   }
                   return ListView.builder(
-                    itemCount: 1,
+                    itemCount: 5, // Criar controle a partir da criação de novas metas para utilizar Length
                     itemBuilder: (context, index) {
-                      return cardList();
+                      if (index == 0) {
+                        return cardList("Para minha bicicleta", "R\$875,00", "R\$1000,00", index);
+                      } else if (index == 1) {
+                        return cardList("Para meu PS5", "R\$2405,00", "R\$4300,00", index);
+                      } else if (index == 2) {
+                        return cardList("Para meu celular", "R\$1640,00", "R\$2300,00", index);
+                      }
+                      return SizedBox();
                     },
                   );
                 },
@@ -118,7 +133,24 @@ class PiggyBankChildPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        ButtonColorBright(label: 'Guardar', onPressed: () {}),
+                        ButtonColorBright(
+                          label: 'Guardar',
+                          onPressed: () {
+                            if (selectedCheckBoxIndex != -1) {
+                              showModalBottomSheet(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AddValueGoals(
+                                    onTap: () {
+                                      Navigator.of(context).pop();
+                                      showSuccessMessage(context);
+                                    },
+                                  );
+                                },
+                              );
+                            }
+                          },
+                        ),
                       ],
                     ),
                   ],
@@ -130,52 +162,147 @@ class PiggyBankChildPage extends StatelessWidget {
       ),
     );
   }
-}
 
-Widget cardList() {
-  return Column(
-    children: [
-      const SizedBox(
-        height: 8,
-      ),
-      Container(
-        padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          color: UiConfig.colorScheme.surface,
-        ),
-        child: Column(
-          children: [
-            const Row(
-              children: [
-                Text(
-                  'Para minha bicicleta:',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'R\$375,00',
-                  style: TextStyle(
+  Widget cardList(String title, String amount, String goal, int index) {
+    bool isSelected = (index == selectedCheckBoxIndex); // Verifica se este CheckBox está selecionado
+
+    return Column(
+      children: [
+        const SizedBox(height: 8),
+        Container(
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            color: UiConfig.colorScheme.surface,
+          ),
+          child: Column(
+            children: [
+              const SizedBox(height: 8),
+              Row(
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    amount,
+                    style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: UiConfig.colorScheme.primary),
-                ),
-                Text(
-                  'Objetivo: R\$1000,00',
-                  style: TextStyle(
+                      color: UiConfig.colorScheme.primary,
+                    ),
+                  ),
+                  Text(
+                    'Objetivo: $goal',
+                    style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
-                      color: UiConfig.colorScheme.primaryContainer),
-                ),
+                      color: UiConfig.colorScheme.primaryContainer,
+                    ),
+                  ),
+                  Checkbox(
+                    value: isSelected,
+                    onChanged: (value) {
+                      setState(() {
+                        if (value == true) {
+                          selectedCheckBoxIndex = index; // Atualiza o CheckBox selecionado
+                        } else {
+                          selectedCheckBoxIndex = -1; // Desmarca o CheckBox
+                        }
+                      });
+                    },
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 20),
+      ],
+    );
+  }
+}
+
+void showSuccessMessage(BuildContext context) async {
+  await showDialog(
+    context: context,
+    builder: (contexto) => AlertDialog(
+      backgroundColor: UiConfig.colorScheme.primary,
+      content: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+          Text(
+          "Nova atividade salva com sucesso!",
+          style: TextStyle(color: UiConfig.colorScheme.surface),
+        ),
+        const SizedBox(height: 10),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset('assets/icons/icon_coins_one.png'),
+            const SizedBox(width: 10),
+            Image.asset('assets/icons/icon_check.png'),
+            const SizedBox(width: 10),
+            Image.asset('assets/icons/icon_coins_two.png'),
               ],
-            ),
+            )
           ],
         ),
       ),
-    ],
+    ),
   );
+}
+
+
+class AddValueGoals extends StatelessWidget {
+  final VoidCallback onTap;
+
+  const AddValueGoals({required this.onTap, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height,
+      child: Column(
+        children: [
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset('assets/icons/icon_coins.png'),
+              const SizedBox(
+                width: 20,
+              ),
+              const Text('Valor da Moeda',
+                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
+            ],
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          const TextFieldOutlineNumber(label: 'Qual valor deseja guardar?'),
+          Padding(
+            padding: const EdgeInsets.only(right: 16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ButtonColorBright(
+                  label: 'Salvar',
+                  onPressed: onTap,
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
 }

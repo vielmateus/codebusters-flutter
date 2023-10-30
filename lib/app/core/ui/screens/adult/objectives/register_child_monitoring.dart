@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
+import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_icon.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/button_color_dark.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/text_field_outline.dart';
 
@@ -16,6 +17,7 @@ class RegisterChildMonitoring extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: 16)),
       ),
+      bottomNavigationBar: const BottonNavigationBarIcon(),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -44,7 +46,8 @@ class RegisterChildMonitoring extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ButtonColorDark(label: 'Cadastrar', onPressed: () {
-                  Navigator.pushNamed(context, '/selectChildMonitoring');
+                  Navigator.of(context).pop();
+                  showSuccessMessage(context);
                 }),
               ],
             ),
@@ -53,4 +56,41 @@ class RegisterChildMonitoring extends StatelessWidget {
       ),
     );
   }
+}
+
+void showSuccessMessage(BuildContext context) async {
+  await showDialog(
+    context: context,
+    builder: (contexto) => AlertDialog(
+      backgroundColor: UiConfig.colorScheme.primary,
+      content: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              "Criança cadastrada com sucesso!",
+              style: TextStyle(color: UiConfig.colorScheme.surface),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset('assets/icons/icon_coins_one.png'),
+                const SizedBox(
+                  width: 10,
+                ),
+                Image.asset('assets/icons/icon_check.png'),
+                const SizedBox(
+                  width: 10,
+                ),
+                Image.asset('assets/icons/icon_coins_two.png'),
+              ],
+            )
+          ],
+        ),
+      ),
+    ),
+  );
 }

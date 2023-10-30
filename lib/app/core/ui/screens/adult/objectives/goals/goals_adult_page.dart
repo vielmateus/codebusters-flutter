@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hackaton/app/core/ui/ui_config.dart';
-import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_child_icon.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/botton_navigation_bar_icon.dart';
 import 'package:flutter_hackaton/app/core/ui/widgets/button_color_bright.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
-class GoalsChildPage extends StatefulWidget {
-  const GoalsChildPage({super.key});
+class GoalsAdultPage extends StatefulWidget {
+  const GoalsAdultPage({super.key});
 
   @override
-  State<GoalsChildPage> createState() => _GoalsChildPageState();
+  State<GoalsAdultPage> createState() => _GoalsAdultPageState();
 }
 
-class _GoalsChildPageState extends State<GoalsChildPage> {
+class _GoalsAdultPageState extends State<GoalsAdultPage> {
   @override
   void initState() {
     super.initState();
@@ -21,9 +20,9 @@ class _GoalsChildPageState extends State<GoalsChildPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const BottonNavigationBarChildIcon(),
+      bottomNavigationBar: const BottonNavigationBarIcon(),
       appBar: AppBar(
-        title: const Text('Cofrinho'),
+        title: const Text('Monitoramento'),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -101,7 +100,7 @@ class _GoalsChildPageState extends State<GoalsChildPage> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
-                        '   Para meu PS5:',
+                        '   Para meu celular:',
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.normal,
@@ -168,6 +167,10 @@ class _GoalsChildPageState extends State<GoalsChildPage> {
                   ),
                   const SizedBox(
                     height: 60,
+                  ),
+                  ButtonColorBright(label: 'Nova Meta', onPressed: () {
+                    Navigator.of(context).pushNamed('/newGoalsAdultPage');
+                    }
                   ),
                 ],
               ),

@@ -37,7 +37,6 @@ class EditActivitiesPage extends StatelessWidget {
             () => Navigator.of(context).pushNamed('/newActivitePage'),
             () {
               showAlertDialog(context, () {
-                print('Confirmou');
               });
             },
           )),
@@ -56,6 +55,7 @@ class EditActivitiesPage extends StatelessWidget {
               ButtonColorBright(
                 label: 'Salvar',
                 onPressed: () {
+                  Navigator.of(context).pop();
                   showSuccessMessage(context);
                 },
               ),
